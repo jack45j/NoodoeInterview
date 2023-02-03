@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		DBF344CB298CFD430019B286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344CA298CFD430019B286 /* AppDelegate.swift */; };
-		DBF344CF298CFD430019B286 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344CE298CFD430019B286 /* ViewController.swift */; };
+		DBF344CF298CFD430019B286 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344CE298CFD430019B286 /* MainViewController.swift */; };
 		DBF344D4298CFD450019B286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBF344D3298CFD450019B286 /* Assets.xcassets */; };
 		DBF344D7298CFD450019B286 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBF344D5298CFD450019B286 /* LaunchScreen.storyboard */; };
-		DBF344E2298CFD450019B286 /* NoodoeInterviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344E1298CFD450019B286 /* NoodoeInterviewTests.swift */; };
+		DBF344E2298CFD450019B286 /* BaseCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344E1298CFD450019B286 /* BaseCoordinatorTests.swift */; };
 		DBF344EC298CFD450019B286 /* NoodoeInterviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344EB298CFD450019B286 /* NoodoeInterviewUITests.swift */; };
 		DBF344EE298CFD450019B286 /* NoodoeInterviewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344ED298CFD450019B286 /* NoodoeInterviewUITestsLaunchTests.swift */; };
 		DBF344FB298CFDF20019B286 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344FA298CFDF20019B286 /* Coordinator.swift */; };
@@ -22,6 +22,9 @@
 		DBF34506298D010C0019B286 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF34505298D010C0019B286 /* AppCoordinator.swift */; };
 		DBF34508298D01390019B286 /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF34507298D01390019B286 /* CoordinatorFactory.swift */; };
 		DBF3450A298D01540019B286 /* CoordinatorFactory+Imp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF34509298D01540019B286 /* CoordinatorFactory+Imp.swift */; };
+		DBF34514298D122D0019B286 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF34513298D122D0019B286 /* XCTestCase+MemoryLeakTracking.swift */; };
+		DBF34517298D14820019B286 /* StoryboardSceneBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF34516298D14820019B286 /* StoryboardSceneBased.swift */; };
+		DBF34519298D15010019B286 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBF34518298D15010019B286 /* MainViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,12 +47,12 @@
 /* Begin PBXFileReference section */
 		DBF344C7298CFD430019B286 /* NoodoeInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoodoeInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF344CA298CFD430019B286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DBF344CE298CFD430019B286 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DBF344CE298CFD430019B286 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DBF344D3298CFD450019B286 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBF344D6298CFD450019B286 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBF344D8298CFD450019B286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBF344DD298CFD450019B286 /* NoodoeInterviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoodoeInterviewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DBF344E1298CFD450019B286 /* NoodoeInterviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoodoeInterviewTests.swift; sourceTree = "<group>"; };
+		DBF344E1298CFD450019B286 /* BaseCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinatorTests.swift; sourceTree = "<group>"; };
 		DBF344E7298CFD450019B286 /* NoodoeInterviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoodoeInterviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF344EB298CFD450019B286 /* NoodoeInterviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoodoeInterviewUITests.swift; sourceTree = "<group>"; };
 		DBF344ED298CFD450019B286 /* NoodoeInterviewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoodoeInterviewUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -61,6 +64,9 @@
 		DBF34505298D010C0019B286 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DBF34507298D01390019B286 /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
 		DBF34509298D01540019B286 /* CoordinatorFactory+Imp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoordinatorFactory+Imp.swift"; sourceTree = "<group>"; };
+		DBF34513298D122D0019B286 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		DBF34516298D14820019B286 /* StoryboardSceneBased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardSceneBased.swift; sourceTree = "<group>"; };
+		DBF34518298D15010019B286 /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +122,8 @@
 				DBF3450B298D01AD0019B286 /* Protocol */,
 				DBF3450D298D01E00019B286 /* Router */,
 				DBF3450C298D01CD0019B286 /* Factory */,
-				DBF344CE298CFD430019B286 /* ViewController.swift */,
+				DBF344CE298CFD430019B286 /* MainViewController.swift */,
+				DBF34518298D15010019B286 /* MainViewController.storyboard */,
 				DBF34512298D03CD0019B286 /* Resources */,
 			);
 			path = NoodoeInterview;
@@ -125,7 +132,8 @@
 		DBF344E0298CFD450019B286 /* NoodoeInterviewTests */ = {
 			isa = PBXGroup;
 			children = (
-				DBF344E1298CFD450019B286 /* NoodoeInterviewTests.swift */,
+				DBF344E1298CFD450019B286 /* BaseCoordinatorTests.swift */,
+				DBF34515298D125F0019B286 /* Helpers */,
 			);
 			path = NoodoeInterviewTests;
 			sourceTree = "<group>";
@@ -142,6 +150,7 @@
 		DBF3450B298D01AD0019B286 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				DBF34516298D14820019B286 /* StoryboardSceneBased.swift */,
 				DBF344FA298CFDF20019B286 /* Coordinator.swift */,
 				DBF344FC298CFE000019B286 /* Presentable.swift */,
 				DBF3450E298D02820019B286 /* Parents */,
@@ -183,6 +192,14 @@
 				DBF344D8298CFD450019B286 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		DBF34515298D125F0019B286 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DBF34513298D122D0019B286 /* XCTestCase+MemoryLeakTracking.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBF344D7298CFD450019B286 /* LaunchScreen.storyboard in Resources */,
+				DBF34519298D15010019B286 /* MainViewController.storyboard in Resources */,
 				DBF344D4298CFD450019B286 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,7 +333,7 @@
 		DBF344FE298CFE1C0019B286 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -326,9 +344,9 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -340,13 +358,14 @@
 			files = (
 				DBF344FB298CFDF20019B286 /* Coordinator.swift in Sources */,
 				DBF34500298CFE820019B286 /* BaseCoordinator.swift in Sources */,
-				DBF344CF298CFD430019B286 /* ViewController.swift in Sources */,
+				DBF344CF298CFD430019B286 /* MainViewController.swift in Sources */,
 				DBF34504298D00EC0019B286 /* Router+Imp.swift in Sources */,
 				DBF34506298D010C0019B286 /* AppCoordinator.swift in Sources */,
 				DBF344CB298CFD430019B286 /* AppDelegate.swift in Sources */,
 				DBF34508298D01390019B286 /* CoordinatorFactory.swift in Sources */,
 				DBF34502298D00D10019B286 /* Router.swift in Sources */,
 				DBF3450A298D01540019B286 /* CoordinatorFactory+Imp.swift in Sources */,
+				DBF34517298D14820019B286 /* StoryboardSceneBased.swift in Sources */,
 				DBF344FD298CFE000019B286 /* Presentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,7 +374,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBF344E2298CFD450019B286 /* NoodoeInterviewTests.swift in Sources */,
+				DBF344E2298CFD450019B286 /* BaseCoordinatorTests.swift in Sources */,
+				DBF34514298D122D0019B286 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

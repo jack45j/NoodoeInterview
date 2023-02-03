@@ -12,7 +12,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     var rootController: UINavigationController {
-        return self.window!.rootViewController as! UINavigationController
+        guard let rootController = self.window?.rootViewController as? UINavigationController else { fatalError("window has been deallocated or not been init") }
+        return rootController
     }
 
     // Use lazy var to avoid deallocate

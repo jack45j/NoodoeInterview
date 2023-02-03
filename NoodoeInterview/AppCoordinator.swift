@@ -7,7 +7,7 @@
 
 import UIKit
 
-fileprivate enum LaunchInstructor {
+private enum LaunchInstructor {
     case main
     
     static func configure() -> LaunchInstructor {
@@ -36,6 +36,7 @@ final class ApplicationCoordinator: BaseCoordinator {
     }
     
     private func runMainFlow() {
-        
+        let mainViewController = MainViewController.instantiate()
+        router.setRootModule(mainViewController, hideBar: true)
     }
 }
