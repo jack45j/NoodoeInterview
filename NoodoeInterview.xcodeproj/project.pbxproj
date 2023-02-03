@@ -8,14 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		DBF344CB298CFD430019B286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344CA298CFD430019B286 /* AppDelegate.swift */; };
-		DBF344CD298CFD430019B286 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344CC298CFD430019B286 /* SceneDelegate.swift */; };
 		DBF344CF298CFD430019B286 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344CE298CFD430019B286 /* ViewController.swift */; };
-		DBF344D2298CFD430019B286 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBF344D0298CFD430019B286 /* Main.storyboard */; };
 		DBF344D4298CFD450019B286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBF344D3298CFD450019B286 /* Assets.xcassets */; };
 		DBF344D7298CFD450019B286 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBF344D5298CFD450019B286 /* LaunchScreen.storyboard */; };
 		DBF344E2298CFD450019B286 /* NoodoeInterviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344E1298CFD450019B286 /* NoodoeInterviewTests.swift */; };
 		DBF344EC298CFD450019B286 /* NoodoeInterviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344EB298CFD450019B286 /* NoodoeInterviewUITests.swift */; };
 		DBF344EE298CFD450019B286 /* NoodoeInterviewUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344ED298CFD450019B286 /* NoodoeInterviewUITestsLaunchTests.swift */; };
+		DBF344FB298CFDF20019B286 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344FA298CFDF20019B286 /* Coordinator.swift */; };
+		DBF344FD298CFE000019B286 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344FC298CFE000019B286 /* Presentable.swift */; };
+		DBF34500298CFE820019B286 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344FF298CFE820019B286 /* BaseCoordinator.swift */; };
+		DBF34502298D00D10019B286 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF34501298D00D10019B286 /* Router.swift */; };
+		DBF34504298D00EC0019B286 /* Router+Imp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF34503298D00EC0019B286 /* Router+Imp.swift */; };
+		DBF34506298D010C0019B286 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF34505298D010C0019B286 /* AppCoordinator.swift */; };
+		DBF34508298D01390019B286 /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF34507298D01390019B286 /* CoordinatorFactory.swift */; };
+		DBF3450A298D01540019B286 /* CoordinatorFactory+Imp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF34509298D01540019B286 /* CoordinatorFactory+Imp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +44,7 @@
 /* Begin PBXFileReference section */
 		DBF344C7298CFD430019B286 /* NoodoeInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoodoeInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF344CA298CFD430019B286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DBF344CC298CFD430019B286 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DBF344CE298CFD430019B286 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DBF344D1298CFD430019B286 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DBF344D3298CFD450019B286 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBF344D6298CFD450019B286 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBF344D8298CFD450019B286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +53,14 @@
 		DBF344E7298CFD450019B286 /* NoodoeInterviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoodoeInterviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF344EB298CFD450019B286 /* NoodoeInterviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoodoeInterviewUITests.swift; sourceTree = "<group>"; };
 		DBF344ED298CFD450019B286 /* NoodoeInterviewUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoodoeInterviewUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DBF344FA298CFDF20019B286 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		DBF344FC298CFE000019B286 /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		DBF344FF298CFE820019B286 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		DBF34501298D00D10019B286 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		DBF34503298D00EC0019B286 /* Router+Imp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Router+Imp.swift"; sourceTree = "<group>"; };
+		DBF34505298D010C0019B286 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		DBF34507298D01390019B286 /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
+		DBF34509298D01540019B286 /* CoordinatorFactory+Imp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoordinatorFactory+Imp.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +112,12 @@
 			isa = PBXGroup;
 			children = (
 				DBF344CA298CFD430019B286 /* AppDelegate.swift */,
-				DBF344CC298CFD430019B286 /* SceneDelegate.swift */,
+				DBF34505298D010C0019B286 /* AppCoordinator.swift */,
+				DBF3450B298D01AD0019B286 /* Protocol */,
+				DBF3450D298D01E00019B286 /* Router */,
+				DBF3450C298D01CD0019B286 /* Factory */,
 				DBF344CE298CFD430019B286 /* ViewController.swift */,
-				DBF344D0298CFD430019B286 /* Main.storyboard */,
-				DBF344D3298CFD450019B286 /* Assets.xcassets */,
-				DBF344D5298CFD450019B286 /* LaunchScreen.storyboard */,
-				DBF344D8298CFD450019B286 /* Info.plist */,
+				DBF34512298D03CD0019B286 /* Resources */,
 			);
 			path = NoodoeInterview;
 			sourceTree = "<group>";
@@ -127,6 +139,52 @@
 			path = NoodoeInterviewUITests;
 			sourceTree = "<group>";
 		};
+		DBF3450B298D01AD0019B286 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				DBF344FA298CFDF20019B286 /* Coordinator.swift */,
+				DBF344FC298CFE000019B286 /* Presentable.swift */,
+				DBF3450E298D02820019B286 /* Parents */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		DBF3450C298D01CD0019B286 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				DBF34507298D01390019B286 /* CoordinatorFactory.swift */,
+				DBF34509298D01540019B286 /* CoordinatorFactory+Imp.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		DBF3450D298D01E00019B286 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				DBF34501298D00D10019B286 /* Router.swift */,
+				DBF34503298D00EC0019B286 /* Router+Imp.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		DBF3450E298D02820019B286 /* Parents */ = {
+			isa = PBXGroup;
+			children = (
+				DBF344FF298CFE820019B286 /* BaseCoordinator.swift */,
+			);
+			path = Parents;
+			sourceTree = "<group>";
+		};
+		DBF34512298D03CD0019B286 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DBF344D3298CFD450019B286 /* Assets.xcassets */,
+				DBF344D5298CFD450019B286 /* LaunchScreen.storyboard */,
+				DBF344D8298CFD450019B286 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,6 +195,7 @@
 				DBF344C3298CFD430019B286 /* Sources */,
 				DBF344C4298CFD430019B286 /* Frameworks */,
 				DBF344C5298CFD430019B286 /* Resources */,
+				DBF344FE298CFE1C0019B286 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -233,7 +292,6 @@
 			files = (
 				DBF344D7298CFD450019B286 /* LaunchScreen.storyboard in Resources */,
 				DBF344D4298CFD450019B286 /* Assets.xcassets in Resources */,
-				DBF344D2298CFD430019B286 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,14 +311,43 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DBF344FE298CFE1C0019B286 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "#export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DBF344C3298CFD430019B286 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBF344FB298CFDF20019B286 /* Coordinator.swift in Sources */,
+				DBF34500298CFE820019B286 /* BaseCoordinator.swift in Sources */,
 				DBF344CF298CFD430019B286 /* ViewController.swift in Sources */,
+				DBF34504298D00EC0019B286 /* Router+Imp.swift in Sources */,
+				DBF34506298D010C0019B286 /* AppCoordinator.swift in Sources */,
 				DBF344CB298CFD430019B286 /* AppDelegate.swift in Sources */,
-				DBF344CD298CFD430019B286 /* SceneDelegate.swift in Sources */,
+				DBF34508298D01390019B286 /* CoordinatorFactory.swift in Sources */,
+				DBF34502298D00D10019B286 /* Router.swift in Sources */,
+				DBF3450A298D01540019B286 /* CoordinatorFactory+Imp.swift in Sources */,
+				DBF344FD298CFE000019B286 /* Presentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +384,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DBF344D0298CFD430019B286 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DBF344D1298CFD430019B286 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DBF344D5298CFD450019B286 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -437,14 +516,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 79399T3H3C;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NoodoeInterview/Info.plist;
+				INFOPLIST_FILE = NoodoeInterview/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,14 +544,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 79399T3H3C;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NoodoeInterview/Info.plist;
+				INFOPLIST_FILE = NoodoeInterview/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
