@@ -12,34 +12,20 @@ final class URLSessionHTTPClientTests: XCTestCase {
     override func setUpWithError() throws {
         URLProtocolStub.removeStub()
     }
-
-    func test_getFromURL_performsGETRequestWithURL() {
-        let url = anyURL()
-        let header = anyHeader()
-        let exp = expectation(description: "Wait for request")
-        
-        URLProtocolStub.observeRequests { request in
-            XCTAssertEqual(request.url, url)
-            XCTAssertEqual(request.httpMethod, "GET")
-            XCTAssertEqual(request.allHTTPHeaderFields, header)
-            exp.fulfill()
-        }
-        
-        makeSUT().get(from: url, header: header) { _ in }
-        
-        wait(for: [exp], timeout: 1.0)
-    }
     
     func test_getHttpMethod_matches() {
         let url = anyURL()
         let header = anyHeader()
+        let params = anyParams()
+        let jsonEncoder = JsonEncoder()
         
         let exp = expectation(description: "Wait for requests")
         URLProtocolStub.observeRequests { request in
             XCTAssertEqual(request.httpMethod, URLSessionHTTPClient.HTTPRequestMethod.get.rawValue)
+            XCTAssertTrue(request.allHTTPHeaderFields!.contains(dict: header))
             exp.fulfill()
         }
-        makeSUT().get(from: url, header: header) { _ in }
+        makeSUT().get(from: url, header: header, params: params, encoder: jsonEncoder) { _ in }
         
         wait(for: [exp], timeout: 1)
     }
@@ -47,13 +33,16 @@ final class URLSessionHTTPClientTests: XCTestCase {
     func test_postHttpMethod_matches() {
         let url = anyURL()
         let header = anyHeader()
+        let params = anyParams()
+        let jsonEncoder = JsonEncoder()
         
         let exp = expectation(description: "Wait for requests")
         URLProtocolStub.observeRequests { request in
             XCTAssertEqual(request.httpMethod, URLSessionHTTPClient.HTTPRequestMethod.post.rawValue)
+            XCTAssertTrue(request.allHTTPHeaderFields!.contains(dict: header))
             exp.fulfill()
         }
-        makeSUT().post(from: url, header: header) { _ in }
+        makeSUT().post(from: url, header: header, params: params, encoder: jsonEncoder) { _ in }
         
         wait(for: [exp], timeout: 1)
     }
@@ -61,13 +50,16 @@ final class URLSessionHTTPClientTests: XCTestCase {
     func test_putHttpMethod_matches() {
         let url = anyURL()
         let header = anyHeader()
+        let params = anyParams()
+        let jsonEncoder = JsonEncoder()
         
         let exp = expectation(description: "Wait for requests")
         URLProtocolStub.observeRequests { request in
             XCTAssertEqual(request.httpMethod, URLSessionHTTPClient.HTTPRequestMethod.put.rawValue)
+            XCTAssertTrue(request.allHTTPHeaderFields!.contains(dict: header))
             exp.fulfill()
         }
-        makeSUT().put(from: url, header: header) { _ in }
+        makeSUT().put(from: url, header: header, params: params, encoder: jsonEncoder) { _ in }
         
         wait(for: [exp], timeout: 1)
     }
@@ -175,7 +167,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
         let exp = expectation(description: "Wait for completion")
         
         var receivedResult: HTTPClient.Result!
-        taskHandler(sut.get(from: anyURL(), header: anyHeader()) { result in
+        taskHandler(sut.get(from: anyURL(), header: anyHeader(), params: anyParams(), encoder: JsonEncoder()) { result in
             receivedResult = result
             exp.fulfill()
         })
@@ -196,6 +188,10 @@ final class URLSessionHTTPClientTests: XCTestCase {
         return ["SomeHeaderKey": "SomeHeaderValue"]
     }
     
+    private func anyParams() -> URLSessionHTTPClient.Params {
+        return ["someParamsKey": "anyParamsValue"]
+    }
+    
     func anyData() -> Data {
         return Data("any data".utf8)
     }
@@ -206,5 +202,13 @@ final class URLSessionHTTPClientTests: XCTestCase {
     
     private func nonHTTPURLResponse() -> URLResponse {
         return URLResponse(url: anyURL(), mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
+    }
+}
+
+private extension Dictionary where Key: Hashable, Value: Equatable {
+    func contains(dict: Dictionary) -> Bool {
+        dict.allSatisfy {
+            return self[$0.key] == $0.value
+        }
     }
 }

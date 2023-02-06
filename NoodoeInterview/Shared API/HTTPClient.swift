@@ -7,32 +7,22 @@
 
 import Foundation
 
-protocol HTTPClientSharedUseCase {
-    var header: URLSessionHTTPClient.Header { get }
-}
-
-final class LoginHTTPClient: HTTPClientSharedUseCase {
-    var header: URLSessionHTTPClient.Header {
-        return [
-            "X-Parse-Application-Id": "vqYuKPOkLQLYHhk4QTGsGKFwATT4mBIGREI2m8eD"
-        ]
-    }
-}
-
 protocol HTTPClientTask {
     func cancel()
 }
 
 protocol HTTPClient {
     typealias Header = [String: String]
+    typealias Params = Encodable
     typealias Result = Swift.Result<(Data, HTTPURLResponse), Error>
+    typealias Completion = (Result) -> Void
     
     @discardableResult
-    func get(from url: URL, header: Header, completion: @escaping (Result) -> Void) -> HTTPClientTask
+    func get(from url: URL, header: Header, params: Params, encoder: ParametersEncoder, completion: @escaping (Result) -> Void) -> HTTPClientTask
     
     @discardableResult
-    func post(from url: URL, header: Header, completion: @escaping (Result) -> Void) -> HTTPClientTask
+    func post(from url: URL, header: Header, params: Params, encoder: ParametersEncoder, completion: @escaping (Result) -> Void) -> HTTPClientTask
     
     @discardableResult
-    func put(from url: URL, header: Header, completion: @escaping (Result) -> Void) -> HTTPClientTask
+    func put(from url: URL, header: Header, params: Params, encoder: ParametersEncoder, completion: @escaping (Result) -> Void) -> HTTPClientTask
 }

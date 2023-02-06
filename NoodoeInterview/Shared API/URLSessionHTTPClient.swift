@@ -30,23 +30,35 @@ final class URLSessionHTTPClient: HTTPClient {
         }
     }
     
-    func get(from url: URL, header: Header, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
-        executeRequest(from: url, method: .get, header: header, completion: completion)
+    @discardableResult
+    func get(from url: URL, header: Header, params: Params,
+             encoder: ParametersEncoder,
+             completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
+        executeRequest(from: url, method: .get, header: header, params: params, encoder: encoder, completion: completion)
     }
     
-    func post(from url: URL, header: Header, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
-        executeRequest(from: url, method: .post, header: header, completion: completion)
+    @discardableResult
+    func post(from url: URL, header: Header, params: Params,
+              encoder: ParametersEncoder,
+              completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
+        executeRequest(from: url, method: .post, header: header, params: params, encoder: encoder, completion: completion)
     }
     
-    func put(from url: URL, header: Header, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
-        executeRequest(from: url, method: .put, header: header, completion: completion)
+    @discardableResult
+    func put(from url: URL, header: Header, params: Params,
+             encoder: ParametersEncoder,
+             completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
+        executeRequest(from: url, method: .put, header: header, params: params, encoder: encoder, completion: completion)
     }
     
-    private func executeRequest(from url: URL, method: HTTPRequestMethod, header: Header, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
-        
+    private func executeRequest(
+        from url: URL, method: HTTPRequestMethod, header: Header,
+        params: Params, encoder: ParametersEncoder,
+        completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         request.allHTTPHeaderFields = header
+        encoder.encode(parameters: params, request: &request)
         
         let task = session.dataTask(with: request) { data, response, error in
             completion(Result {

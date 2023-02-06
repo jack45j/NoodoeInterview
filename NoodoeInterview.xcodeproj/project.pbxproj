@@ -31,6 +31,13 @@
 		DBF345212990ABB70019B286 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3451A2990A9BB0019B286 /* HTTPClient.swift */; };
 		DBF345232990ABDD0019B286 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF345222990ABDD0019B286 /* URLSessionHTTPClient.swift */; };
 		DBF345242990AE7D0019B286 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF345222990ABDD0019B286 /* URLSessionHTTPClient.swift */; };
+		DBF345262990D0F50019B286 /* UserInfoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF345252990D0F50019B286 /* UserInfoAdapter.swift */; };
+		DBF345292990E98B0019B286 /* ResourceLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF345282990E98B0019B286 /* ResourceLoadingView.swift */; };
+		DBF3452B2990E9BD0019B286 /* ResourceLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3452A2990E9BD0019B286 /* ResourceLoadingViewModel.swift */; };
+		DBF3452E2990E9EA0019B286 /* ParametersEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3452D2990E9EA0019B286 /* ParametersEncoder.swift */; };
+		DBF345302990EA700019B286 /* ResourceErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3452F2990EA700019B286 /* ResourceErrorViewModel.swift */; };
+		DBF345322990EA7D0019B286 /* ResourceErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF345312990EA7D0019B286 /* ResourceErrorView.swift */; };
+		DBF345332990EE7E0019B286 /* ParametersEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3452D2990E9EA0019B286 /* ParametersEncoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +84,12 @@
 		DBF3451D2990AB3A0019B286 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		DBF3451F2990AB6E0019B286 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		DBF345222990ABDD0019B286 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		DBF345252990D0F50019B286 /* UserInfoAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoAdapter.swift; sourceTree = "<group>"; };
+		DBF345282990E98B0019B286 /* ResourceLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingView.swift; sourceTree = "<group>"; };
+		DBF3452A2990E9BD0019B286 /* ResourceLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingViewModel.swift; sourceTree = "<group>"; };
+		DBF3452D2990E9EA0019B286 /* ParametersEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersEncoder.swift; sourceTree = "<group>"; };
+		DBF3452F2990EA700019B286 /* ResourceErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceErrorViewModel.swift; sourceTree = "<group>"; };
+		DBF345312990EA7D0019B286 /* ResourceErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +148,9 @@
 				DBF344CE298CFD430019B286 /* MainViewController.swift */,
 				DBF34518298D15010019B286 /* MainViewController.storyboard */,
 				DBF34512298D03CD0019B286 /* Resources */,
+				DBF345272990D19F0019B286 /* UserInfoModule */,
 				DBF3451C2990A9C40019B286 /* Shared API */,
+				DBF3452C2990E9CE0019B286 /* Shared Presentation */,
 			);
 			path = NoodoeInterview;
 			sourceTree = "<group>";
@@ -220,8 +235,28 @@
 			children = (
 				DBF3451A2990A9BB0019B286 /* HTTPClient.swift */,
 				DBF345222990ABDD0019B286 /* URLSessionHTTPClient.swift */,
+				DBF3452D2990E9EA0019B286 /* ParametersEncoder.swift */,
 			);
 			path = "Shared API";
+			sourceTree = "<group>";
+		};
+		DBF345272990D19F0019B286 /* UserInfoModule */ = {
+			isa = PBXGroup;
+			children = (
+				DBF345252990D0F50019B286 /* UserInfoAdapter.swift */,
+			);
+			path = UserInfoModule;
+			sourceTree = "<group>";
+		};
+		DBF3452C2990E9CE0019B286 /* Shared Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				DBF345282990E98B0019B286 /* ResourceLoadingView.swift */,
+				DBF3452A2990E9BD0019B286 /* ResourceLoadingViewModel.swift */,
+				DBF345312990EA7D0019B286 /* ResourceErrorView.swift */,
+				DBF3452F2990EA700019B286 /* ResourceErrorViewModel.swift */,
+			);
+			path = "Shared Presentation";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,15 +415,21 @@
 			files = (
 				DBF344FB298CFDF20019B286 /* Coordinator.swift in Sources */,
 				DBF34500298CFE820019B286 /* BaseCoordinator.swift in Sources */,
+				DBF345262990D0F50019B286 /* UserInfoAdapter.swift in Sources */,
+				DBF345322990EA7D0019B286 /* ResourceErrorView.swift in Sources */,
+				DBF3452E2990E9EA0019B286 /* ParametersEncoder.swift in Sources */,
 				DBF3451B2990A9BB0019B286 /* HTTPClient.swift in Sources */,
 				DBF344CF298CFD430019B286 /* MainViewController.swift in Sources */,
 				DBF34504298D00EC0019B286 /* Router+Imp.swift in Sources */,
+				DBF345302990EA700019B286 /* ResourceErrorViewModel.swift in Sources */,
 				DBF34506298D010C0019B286 /* AppCoordinator.swift in Sources */,
 				DBF345232990ABDD0019B286 /* URLSessionHTTPClient.swift in Sources */,
 				DBF344CB298CFD430019B286 /* AppDelegate.swift in Sources */,
 				DBF34508298D01390019B286 /* CoordinatorFactory.swift in Sources */,
 				DBF34502298D00D10019B286 /* Router.swift in Sources */,
+				DBF3452B2990E9BD0019B286 /* ResourceLoadingViewModel.swift in Sources */,
 				DBF3450A298D01540019B286 /* CoordinatorFactory+Imp.swift in Sources */,
+				DBF345292990E98B0019B286 /* ResourceLoadingView.swift in Sources */,
 				DBF34517298D14820019B286 /* StoryboardSceneBased.swift in Sources */,
 				DBF344FD298CFE000019B286 /* Presentable.swift in Sources */,
 			);
@@ -398,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBF345332990EE7E0019B286 /* ParametersEncoder.swift in Sources */,
 				DBF344E2298CFD450019B286 /* BaseCoordinatorTests.swift in Sources */,
 				DBF345212990ABB70019B286 /* HTTPClient.swift in Sources */,
 				DBF3451E2990AB3A0019B286 /* URLSessionHTTPClientTests.swift in Sources */,
