@@ -23,7 +23,7 @@ final class UserInfoLoginAdapter: UserInfoLoginUseCase, ResourceView {
     func login(userName: String, password: String) {
         presenter?.didStartLoading()
         
-        let loginEndpoint = UserInfoEndPoint.post
+        let loginEndpoint = UserInfoEndPoint.signIn
         
         let parameters: [String: String] = [
             "username": userName,

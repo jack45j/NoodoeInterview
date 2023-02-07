@@ -96,6 +96,5 @@ extension MainViewController: ResourceErrorView, ResourceLoadingView {
             loadingView.stopAnimating()
             loadingView.removeFromSuperview()
         }
-        
     }
 }

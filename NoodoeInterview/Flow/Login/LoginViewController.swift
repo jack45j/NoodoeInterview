@@ -17,7 +17,15 @@ class LoginViewController: UIViewController, StoryboardBased, ResourceLoadingVie
     }
     
     func display(_ viewModel: ResourceLoadingViewModel) {
-        print("isLoading: \(viewModel.isLoading)")
+        let loadingView = UIActivityIndicatorView(frame: view.frame)
+        loadingView.style = .large
+        view.addSubview(loadingView)
+        if viewModel.isLoading {
+            loadingView.startAnimating()
+        } else {
+            loadingView.stopAnimating()
+            loadingView.removeFromSuperview()
+        }
     }
     
     func display(_ viewModel: ResourceErrorViewModel) {

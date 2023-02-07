@@ -300,9 +300,9 @@
 			isa = PBXGroup;
 			children = (
 				DBF345252990D0F50019B286 /* UserInfoLoginAdapter.swift */,
+				DBA49D902992346B0064B30B /* UserInfoUpdateDataAdapter.swift */,
 				DB812DAC29921D0B00DF17BA /* UserInfoViewModel.swift */,
 				DB812DB029921D7700DF17BA /* UserInfoEndPoint.swift */,
-				DBA49D902992346B0064B30B /* UserInfoUpdateDataAdapter.swift */,
 			);
 			path = UserInfoLoginModule;
 			sourceTree = "<group>";

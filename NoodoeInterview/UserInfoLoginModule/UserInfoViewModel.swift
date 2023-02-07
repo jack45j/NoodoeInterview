@@ -7,13 +7,26 @@
 
 import Foundation
 
-struct UserInfoItem: Hashable {
+struct UserInfoItem: Hashable, Encodable {
     var username: String
     var phone: String
     var createdDate: Date
     var updatedDate: Date
     var objectId: String
     var sessionToken: String
+    
+    func store() {
+        let data = try? JSONEncoder().encode(UserInfoItem.self)
+        
+    }
+    
+    static var getUserData: UserInfoItem? {
+        guard let userData = UserDefaults.standard.data(forKey: "Noodoe.UserInfoItem"),
+              let user = UserInfoMapper.map(data: userData) else {
+            return nil
+        }
+        return user
+    }
 }
 
 final class UserInfoMapper {

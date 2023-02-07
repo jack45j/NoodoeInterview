@@ -59,24 +59,24 @@ final class URLSessionHTTPClient: HTTPClient {
         params: Params, encoder: ParametersEncoder,
         storer: ((Data) -> Void)?,
         completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
-        var request = URLRequest(url: url)
-        request.httpMethod = method.rawValue
-        request.allHTTPHeaderFields = header
-        encoder.encode(parameters: params, request: &request)
-        
-        let task = session.dataTask(with: request) { data, response, error in
-            completion(Result {
-                if let error = error {
-                    throw error
-                } else if let data = data, let response = response as? HTTPURLResponse {
-                    storer?(data)
-                    return (data, response)
-                } else {
-                    throw UnexpectedValuesRepresentation()
-                }
-            })
+            var request = URLRequest(url: url)
+            request.httpMethod = method.rawValue
+            request.allHTTPHeaderFields = header
+            encoder.encode(parameters: params, request: &request)
+            
+            let task = session.dataTask(with: request) { data, response, error in
+                completion(Result {
+                    if let error = error {
+                        throw error
+                    } else if let data = data, let response = response as? HTTPURLResponse {
+                        storer?(data)
+                        return (data, response)
+                    } else {
+                        throw UnexpectedValuesRepresentation()
+                    }
+                })
+            }
+            task.resume()
+            return URLSessionTaskWrapper(wrapped: task)
         }
-        task.resume()
-        return URLSessionTaskWrapper(wrapped: task)
-    }
 }
