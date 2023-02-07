@@ -18,7 +18,20 @@ final class BaseCoordinatorTests: XCTestCase {
         XCTAssertEqual(sut.childCoordinators.map { ($0 as? MockCoordinator)?.uuid }, [coordinator.uuid])
         
         sut.removeDependency(coordinator)
-        trackForMemoryLeaks(sut)
+        trackForMemoryLeaks(coordinator)
+        XCTAssertEqual(sut.childCoordinators.map { ($0 as? MockCoordinator)?.uuid }, [])
+    }
+    
+    func test_remove_child_recursively() {
+        let sut = MockCoordinator()
+        let coordinator = MockCoordinator()
+        let childCoordinator = MockCoordinator()
+        coordinator.addDependency(childCoordinator)
+        sut.addDependency(coordinator)
+        
+        sut.removeDependency(coordinator)
+        trackForMemoryLeaks(coordinator)
+        trackForMemoryLeaks(childCoordinator)
         XCTAssertEqual(sut.childCoordinators.map { ($0 as? MockCoordinator)?.uuid }, [])
     }
     
