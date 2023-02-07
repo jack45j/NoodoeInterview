@@ -20,9 +20,15 @@ class ErrorView: ResourceErrorView {
 }
 
 class MainViewController: UIViewController, StoryboardBased {
+    
+    var onLoginBtnDidTouch: (() -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        UserInfoAdapter()
 //            .login(userName: "test2@qq.com", password: "test1234qq")
+    }
+    @IBAction func didTouchLoginButton(_ sender: Any) {
+        onLoginBtnDidTouch?()
     }
 }

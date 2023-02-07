@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB06EC6F29910344006A6C6D /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06EC6E29910344006A6C6D /* ModuleFactory.swift */; };
+		DB06EC7129910389006A6C6D /* ModuleFactory+Imp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06EC7029910389006A6C6D /* ModuleFactory+Imp.swift */; };
+		DB06EC73299104F8006A6C6D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06EC72299104F8006A6C6D /* LoginViewController.swift */; };
+		DB06EC7529910523006A6C6D /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB06EC7429910523006A6C6D /* LoginViewController.storyboard */; };
+		DB06EC772991078B006A6C6D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB06EC762991078B006A6C6D /* LoginView.swift */; };
+		DB812DAD29921D0B00DF17BA /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB812DAC29921D0B00DF17BA /* UserInfoViewModel.swift */; };
+		DB812DAF29921D3D00DF17BA /* ResourceLoadingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB812DAE29921D3D00DF17BA /* ResourceLoadingPresenter.swift */; };
+		DB812DB129921D7700DF17BA /* UserInfoEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB812DB029921D7700DF17BA /* UserInfoEndPoint.swift */; };
+		DB812DB329921D8500DF17BA /* ResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB812DB229921D8500DF17BA /* ResourceView.swift */; };
 		DBF344CB298CFD430019B286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344CA298CFD430019B286 /* AppDelegate.swift */; };
 		DBF344CF298CFD430019B286 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344CE298CFD430019B286 /* MainViewController.swift */; };
 		DBF344D4298CFD450019B286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBF344D3298CFD450019B286 /* Assets.xcassets */; };
@@ -31,7 +40,7 @@
 		DBF345212990ABB70019B286 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3451A2990A9BB0019B286 /* HTTPClient.swift */; };
 		DBF345232990ABDD0019B286 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF345222990ABDD0019B286 /* URLSessionHTTPClient.swift */; };
 		DBF345242990AE7D0019B286 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF345222990ABDD0019B286 /* URLSessionHTTPClient.swift */; };
-		DBF345262990D0F50019B286 /* UserInfoAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF345252990D0F50019B286 /* UserInfoAdapter.swift */; };
+		DBF345262990D0F50019B286 /* UserInfoLoginAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF345252990D0F50019B286 /* UserInfoLoginAdapter.swift */; };
 		DBF345292990E98B0019B286 /* ResourceLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF345282990E98B0019B286 /* ResourceLoadingView.swift */; };
 		DBF3452B2990E9BD0019B286 /* ResourceLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3452A2990E9BD0019B286 /* ResourceLoadingViewModel.swift */; };
 		DBF3452E2990E9EA0019B286 /* ParametersEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3452D2990E9EA0019B286 /* ParametersEncoder.swift */; };
@@ -58,6 +67,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB06EC6E29910344006A6C6D /* ModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactory.swift; sourceTree = "<group>"; };
+		DB06EC7029910389006A6C6D /* ModuleFactory+Imp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModuleFactory+Imp.swift"; sourceTree = "<group>"; };
+		DB06EC72299104F8006A6C6D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DB06EC7429910523006A6C6D /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
+		DB06EC762991078B006A6C6D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		DB812DAC29921D0B00DF17BA /* UserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewModel.swift; sourceTree = "<group>"; };
+		DB812DAE29921D3D00DF17BA /* ResourceLoadingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingPresenter.swift; sourceTree = "<group>"; };
+		DB812DB029921D7700DF17BA /* UserInfoEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoEndPoint.swift; sourceTree = "<group>"; };
+		DB812DB229921D8500DF17BA /* ResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceView.swift; sourceTree = "<group>"; };
 		DBF344C7298CFD430019B286 /* NoodoeInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoodoeInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF344CA298CFD430019B286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBF344CE298CFD430019B286 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -84,7 +102,7 @@
 		DBF3451D2990AB3A0019B286 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		DBF3451F2990AB6E0019B286 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		DBF345222990ABDD0019B286 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
-		DBF345252990D0F50019B286 /* UserInfoAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoAdapter.swift; sourceTree = "<group>"; };
+		DBF345252990D0F50019B286 /* UserInfoLoginAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoLoginAdapter.swift; sourceTree = "<group>"; };
 		DBF345282990E98B0019B286 /* ResourceLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingView.swift; sourceTree = "<group>"; };
 		DBF3452A2990E9BD0019B286 /* ResourceLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingViewModel.swift; sourceTree = "<group>"; };
 		DBF3452D2990E9EA0019B286 /* ParametersEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersEncoder.swift; sourceTree = "<group>"; };
@@ -117,6 +135,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB06EC7829910881006A6C6D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				DB06EC762991078B006A6C6D /* LoginView.swift */,
+				DB06EC72299104F8006A6C6D /* LoginViewController.swift */,
+				DB06EC7429910523006A6C6D /* LoginViewController.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		DB06EC7929910887006A6C6D /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				DBF344CE298CFD430019B286 /* MainViewController.swift */,
+				DBF34518298D15010019B286 /* MainViewController.storyboard */,
+			);
+			path = Landing;
+			sourceTree = "<group>";
+		};
+		DB06EC7A29910894006A6C6D /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				DB06EC7929910887006A6C6D /* Landing */,
+				DB06EC7829910881006A6C6D /* Login */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
 		DBF344BE298CFD430019B286 = {
 			isa = PBXGroup;
 			children = (
@@ -145,10 +191,9 @@
 				DBF3450B298D01AD0019B286 /* Protocol */,
 				DBF3450D298D01E00019B286 /* Router */,
 				DBF3450C298D01CD0019B286 /* Factory */,
-				DBF344CE298CFD430019B286 /* MainViewController.swift */,
-				DBF34518298D15010019B286 /* MainViewController.storyboard */,
+				DB06EC7A29910894006A6C6D /* Flow */,
 				DBF34512298D03CD0019B286 /* Resources */,
-				DBF345272990D19F0019B286 /* UserInfoModule */,
+				DBF345272990D19F0019B286 /* UserInfoLoginModule */,
 				DBF3451C2990A9C40019B286 /* Shared API */,
 				DBF3452C2990E9CE0019B286 /* Shared Presentation */,
 			);
@@ -190,6 +235,8 @@
 			children = (
 				DBF34507298D01390019B286 /* CoordinatorFactory.swift */,
 				DBF34509298D01540019B286 /* CoordinatorFactory+Imp.swift */,
+				DB06EC6E29910344006A6C6D /* ModuleFactory.swift */,
+				DB06EC7029910389006A6C6D /* ModuleFactory+Imp.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -240,12 +287,14 @@
 			path = "Shared API";
 			sourceTree = "<group>";
 		};
-		DBF345272990D19F0019B286 /* UserInfoModule */ = {
+		DBF345272990D19F0019B286 /* UserInfoLoginModule */ = {
 			isa = PBXGroup;
 			children = (
-				DBF345252990D0F50019B286 /* UserInfoAdapter.swift */,
+				DBF345252990D0F50019B286 /* UserInfoLoginAdapter.swift */,
+				DB812DAC29921D0B00DF17BA /* UserInfoViewModel.swift */,
+				DB812DB029921D7700DF17BA /* UserInfoEndPoint.swift */,
 			);
-			path = UserInfoModule;
+			path = UserInfoLoginModule;
 			sourceTree = "<group>";
 		};
 		DBF3452C2990E9CE0019B286 /* Shared Presentation */ = {
@@ -255,6 +304,8 @@
 				DBF3452A2990E9BD0019B286 /* ResourceLoadingViewModel.swift */,
 				DBF345312990EA7D0019B286 /* ResourceErrorView.swift */,
 				DBF3452F2990EA700019B286 /* ResourceErrorViewModel.swift */,
+				DB812DAE29921D3D00DF17BA /* ResourceLoadingPresenter.swift */,
+				DB812DB229921D8500DF17BA /* ResourceView.swift */,
 			);
 			path = "Shared Presentation";
 			sourceTree = "<group>";
@@ -365,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBF344D7298CFD450019B286 /* LaunchScreen.storyboard in Resources */,
+				DB06EC7529910523006A6C6D /* LoginViewController.storyboard in Resources */,
 				DBF34519298D15010019B286 /* MainViewController.storyboard in Resources */,
 				DBF344D4298CFD450019B286 /* Assets.xcassets in Resources */,
 			);
@@ -415,21 +467,29 @@
 			files = (
 				DBF344FB298CFDF20019B286 /* Coordinator.swift in Sources */,
 				DBF34500298CFE820019B286 /* BaseCoordinator.swift in Sources */,
-				DBF345262990D0F50019B286 /* UserInfoAdapter.swift in Sources */,
+				DBF345262990D0F50019B286 /* UserInfoLoginAdapter.swift in Sources */,
 				DBF345322990EA7D0019B286 /* ResourceErrorView.swift in Sources */,
+				DB06EC772991078B006A6C6D /* LoginView.swift in Sources */,
 				DBF3452E2990E9EA0019B286 /* ParametersEncoder.swift in Sources */,
 				DBF3451B2990A9BB0019B286 /* HTTPClient.swift in Sources */,
 				DBF344CF298CFD430019B286 /* MainViewController.swift in Sources */,
 				DBF34504298D00EC0019B286 /* Router+Imp.swift in Sources */,
 				DBF345302990EA700019B286 /* ResourceErrorViewModel.swift in Sources */,
 				DBF34506298D010C0019B286 /* AppCoordinator.swift in Sources */,
+				DB812DB329921D8500DF17BA /* ResourceView.swift in Sources */,
+				DB06EC73299104F8006A6C6D /* LoginViewController.swift in Sources */,
 				DBF345232990ABDD0019B286 /* URLSessionHTTPClient.swift in Sources */,
+				DB06EC7129910389006A6C6D /* ModuleFactory+Imp.swift in Sources */,
 				DBF344CB298CFD430019B286 /* AppDelegate.swift in Sources */,
+				DB06EC6F29910344006A6C6D /* ModuleFactory.swift in Sources */,
 				DBF34508298D01390019B286 /* CoordinatorFactory.swift in Sources */,
+				DB812DAD29921D0B00DF17BA /* UserInfoViewModel.swift in Sources */,
 				DBF34502298D00D10019B286 /* Router.swift in Sources */,
 				DBF3452B2990E9BD0019B286 /* ResourceLoadingViewModel.swift in Sources */,
+				DB812DAF29921D3D00DF17BA /* ResourceLoadingPresenter.swift in Sources */,
 				DBF3450A298D01540019B286 /* CoordinatorFactory+Imp.swift in Sources */,
 				DBF345292990E98B0019B286 /* ResourceLoadingView.swift in Sources */,
+				DB812DB129921D7700DF17BA /* UserInfoEndPoint.swift in Sources */,
 				DBF34517298D14820019B286 /* StoryboardSceneBased.swift in Sources */,
 				DBF344FD298CFE000019B286 /* Presentable.swift in Sources */,
 			);

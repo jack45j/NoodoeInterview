@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Use lazy var to avoid deallocate
     private lazy var appCoordinator: Coordinator = {
         let coordinator = ApplicationCoordinator(
-            router: RouterImp(rootController: self.rootController),
-            coordinatorFactory: CoordinatorFactoryImp()
-        )
+            coordinatorFactory: CoordinatorFactoryImp(),
+            factory: ModuleFactoryImp(),
+            router: RouterImp(rootController: self.rootController))
         return coordinator
     }()
     
