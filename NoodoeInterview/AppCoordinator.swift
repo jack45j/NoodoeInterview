@@ -11,11 +11,13 @@ private enum LaunchInstructor {
     case main(UserInfoItem?)
     
     static func configure() -> LaunchInstructor {
+        // pass previous user data to main flow
         if let userData = UserDefaults.standard.data(forKey: "Noodoe.UserInfoItem"),
            let user = UserInfoMapper.map(data: userData) {
             return .main(user)
+        } else {
+            return .main(nil)
         }
-        return .main(nil)
     }
 }
 
@@ -43,11 +45,11 @@ final class ApplicationCoordinator: BaseCoordinator {
     
     private func runMainFlow(user: UserInfoItem?) {
         let mainViewModule = factory.makeMainModule()
-        mainViewModule.onLoginBtnDidTouch = { [unowned self] in
+        mainViewModule.onLoginShouldStart = { [unowned self] in
             let loginModule = factory.makeLoginModule()
             loginModule.onFinish = { [unowned self, weak mainViewModule] user in
                 if let user = user {
-                    mainViewModule?.setUserInfoItem(user: user)
+                    mainViewModule?.userDataDidChange(user: user)
                 }
                 self.router.dismissModule()
             }
@@ -55,9 +57,7 @@ final class ApplicationCoordinator: BaseCoordinator {
         }
         
         router.setRootModule(mainViewModule, hideBar: true)
-        if let user = user {
-            mainViewModule.loadViewIfNeeded()
-            mainViewModule.setUserInfoItem(user: user)
-        }
+        mainViewModule.loadViewIfNeeded()
+        mainViewModule.userDataDidChange(user: user)
     }
 }

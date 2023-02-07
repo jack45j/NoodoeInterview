@@ -11,6 +11,16 @@ final class ModuleFactoryImp: ModuleFactory {
     func makeMainModule() -> MainViewController {
         let module = MainViewController.instantiate()
         
+        let adapter = UserInfoUpdateDataAdapter(controller: module)
+        adapter.presenter = ResourceLoadingPresenter(
+            resourceView: adapter,
+            loadingView: module,
+            errorView: module,
+            mapper: { $0 }
+        )
+        module.onLogOutShouldStart = adapter.signOut
+        module.onPatchTimeZoneShouldStart = adapter.patchTimeZone
+        
         return module
     }
     

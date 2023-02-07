@@ -12,7 +12,7 @@ final class UserInfoItemMapperTests: XCTestCase {
     func test_deliverNil_on_200HttpResponse_but_InvalidJsonData() {
         let invalidJsonData = Data("Some Invalid Values".utf8)
         
-        XCTAssertNil(UserInfoMapper.map(data: invalidJsonData, from: anyHTTPURLResponse()))
+        XCTAssertNil(UserInfoMapper.map(data: invalidJsonData))
     }
     
     func test_deliverUserInfoItem_on_200HttpResponse_with_ValidJson() throws {
@@ -26,7 +26,7 @@ final class UserInfoItemMapperTests: XCTestCase {
                                     timeFormat: "yyyy-MM-dd'T'HH:mm:ss.SSSz")
         
         let jsonData = try JSONSerialization.data(withJSONObject: json)
-        let result = UserInfoMapper.map(data: jsonData, from: anyHTTPURLResponse())
+        let result = UserInfoMapper.map(data: jsonData)
         
         XCTAssertEqual(item, result)
     }
@@ -41,7 +41,7 @@ final class UserInfoItemMapperTests: XCTestCase {
                                     timeFormat: "yyyy:MM:dd'T'HH:mm:ssz")
         
         let jsonData = try JSONSerialization.data(withJSONObject: json)
-        let result = UserInfoMapper.map(data: jsonData, from: anyHTTPURLResponse())
+        let result = UserInfoMapper.map(data: jsonData)
         
         XCTAssertNil(result)
     }

@@ -18,25 +18,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ig9-GD-E9S">
-                                <rect key="frame" x="64" y="83.000000000000014" width="265" height="134.33333333333337"/>
+                                <rect key="frame" x="64" y="83" width="265" height="170"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kHe-5r-7t6">
-                                        <rect key="frame" x="16" y="7.9999999999999929" width="233" height="118.33333333333331"/>
+                                        <rect key="frame" x="16" y="8" width="233" height="154"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iB0-Gt-bfV">
-                                                <rect key="frame" x="0.0" y="0.0" width="233" height="34.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="233" height="70"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="未登入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1M-Qh-RaU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="165" height="34.333333333333336"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="165" height="70"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TWq-MP-dHF">
-                                                        <rect key="frame" x="173" y="0.0" width="60" height="34.333333333333336"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="TWq-MP-dHF">
+                                                        <rect key="frame" x="173" y="0.0" width="60" height="70"/>
                                                         <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="il2-6Y-Y22">
+                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="33"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="登出"/>
+                                                                <connections>
+                                                                    <action selector="didTouchLogoutButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6ag-gH-dlj"/>
+                                                                </connections>
+                                                            </button>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zm2-LY-FOR">
-                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="34.333333333333336"/>
+                                                                <rect key="frame" x="0.0" y="37" width="60" height="33"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="60" id="paO-mb-AXF"/>
                                                                 </constraints>
@@ -48,7 +57,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLW-PE-JCN">
-                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="34.333333333333336"/>
+                                                                <rect key="frame" x="0.0" y="70" width="60" height="0.0"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="時區"/>
                                                                 <connections>
@@ -60,13 +69,13 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Dy-Xw-jBJ">
-                                                <rect key="frame" x="0.0" y="42.333333333333343" width="233" height="18"/>
+                                                <rect key="frame" x="0.0" y="78" width="233" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMT-hd-ZjX">
-                                                <rect key="frame" x="0.0" y="68.333333333333343" width="233" height="50"/>
+                                                <rect key="frame" x="0.0" y="104" width="233" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <color key="textColor" systemColor="opaqueSeparatorColor"/>
                                                 <nil key="highlightedColor"/>
@@ -96,6 +105,7 @@
                         <outlet property="patchTimeZoneButton" destination="fLW-PE-JCN" id="ji8-qw-aIb"/>
                         <outlet property="phoneNumLabel" destination="1Dy-Xw-jBJ" id="agG-Po-njc"/>
                         <outlet property="signInButton" destination="zm2-LY-FOR" id="6Ts-Qv-ads"/>
+                        <outlet property="signOutButton" destination="il2-6Y-Y22" id="VmG-vt-Oi5"/>
                         <outlet property="userInfoContainerView" destination="Ig9-GD-E9S" id="K6H-uk-qDC"/>
                         <outlet property="userNameLabel" destination="j1M-Qh-RaU" id="30P-s3-9HH"/>
                     </connections>

@@ -9,9 +9,13 @@ import UIKit
 
 protocol UserInfoView {
     var onFinish: (() -> Void)? { get set }
+    var onLoginShouldStart: (() -> Void)? { get set }
+    var onLogOutShouldStart: (() -> Void)? { get set }
+    var onPatchTimeZoneShouldStart: (() -> Void)? { get set }
+    func userDataDidChange(user: UserInfoItem?)
 }
 
-class MainViewController: UIViewController, StoryboardBased {
+class MainViewController: UIViewController, StoryboardBased, UserInfoView {
     
     // MARK: - Outlet
     @IBOutlet weak var userInfoContainerView: UIView!
@@ -20,9 +24,13 @@ class MainViewController: UIViewController, StoryboardBased {
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var lastUpdatedLabel: UILabel!
     @IBOutlet weak var patchTimeZoneButton: UIButton!
+    @IBOutlet weak var signOutButton: UIButton!
     
     // MARK: - output
-    var onLoginBtnDidTouch: (() -> Void)?
+    var onFinish: (() -> Void)?
+    var onLoginShouldStart: (() -> Void)?
+    var onLogOutShouldStart: (() -> Void)?
+    var onPatchTimeZoneShouldStart: (() -> Void)?
     
     // MARK: - Main
     override func viewDidLoad() {
@@ -40,26 +48,54 @@ class MainViewController: UIViewController, StoryboardBased {
         userInfoContainerView.layer.shadowOpacity = 0.4
     }
     
-    func setUserInfoItem(user: UserInfoItem) {
+    func userDataDidChange(user: UserInfoItem?) {
         DispatchQueue.main.async {
-            self.userNameLabel.text = user.username
-            self.phoneNumLabel.text = user.phone
-            self.lastUpdatedLabel.text = DateFormatter.localizedString(
-                from: user.updatedDate,
-                dateStyle: .short,
-                timeStyle: .short
-            )
-            self.signInButton.isHidden = true
-            self.patchTimeZoneButton.isHidden = false
+            self.userNameLabel.text = user?.username ?? "未登入"
+            self.phoneNumLabel.text = user?.phone ?? ""
+            if let updatedDate = user?.updatedDate {
+                self.lastUpdatedLabel.text = DateFormatter.localizedString(
+                    from: updatedDate,
+                    dateStyle: .short,
+                    timeStyle: .short
+                )
+            } else {
+                self.lastUpdatedLabel.text = ""
+            }
+            self.signInButton.isHidden = user != nil
+            self.signOutButton.isHidden = user == nil
+            self.patchTimeZoneButton.isHidden = user == nil
         }
     }
     
     // MARK: - Action
     @IBAction func didTouchLoginButton(_ sender: Any) {
-        onLoginBtnDidTouch?()
+        onLoginShouldStart?()
+    }
+    
+    @IBAction func didTouchLogoutButton(_ sender: Any) {
+        onLogOutShouldStart?()
     }
     
     @IBAction func didTouchPatchTimeZoneButton(_ sender: Any) {
+        onPatchTimeZoneShouldStart?()
+    }
+}
+
+extension MainViewController: ResourceErrorView, ResourceLoadingView {
+    func display(_ viewModel: ResourceErrorViewModel) {
+        
+    }
+    
+    func display(_ viewModel: ResourceLoadingViewModel) {
+        let loadingView = UIActivityIndicatorView(frame: view.frame)
+        loadingView.style = .large
+        view.addSubview(loadingView)
+        if viewModel.isLoading {
+            loadingView.startAnimating()
+        } else {
+            loadingView.stopAnimating()
+            loadingView.removeFromSuperview()
+        }
         
     }
 }

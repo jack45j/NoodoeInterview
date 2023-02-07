@@ -42,6 +42,11 @@ final class ResourceLoadingPresenter<Resource, View: ResourceView> {
         }
     }
     
+    func didFinishLoading(errorMessage: String) {
+        errorView.display(.error(message: errorMessage))
+        loadingView.display(.init(isLoading: false))
+    }
+    
     func didFinishLoading(error: Error) {
         errorView.display(.error(message: error.localizedDescription))
         loadingView.display(.init(isLoading: false))
