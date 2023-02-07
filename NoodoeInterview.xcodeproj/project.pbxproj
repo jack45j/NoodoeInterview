@@ -192,10 +192,10 @@
 				DBF3450D298D01E00019B286 /* Router */,
 				DBF3450C298D01CD0019B286 /* Factory */,
 				DB06EC7A29910894006A6C6D /* Flow */,
-				DBF34512298D03CD0019B286 /* Resources */,
 				DBF345272990D19F0019B286 /* UserInfoLoginModule */,
 				DBF3451C2990A9C40019B286 /* Shared API */,
 				DBF3452C2990E9CE0019B286 /* Shared Presentation */,
+				DBF34512298D03CD0019B286 /* Resources */,
 			);
 			path = NoodoeInterview;
 			sourceTree = "<group>";

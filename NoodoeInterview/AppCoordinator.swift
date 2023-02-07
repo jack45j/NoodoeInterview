@@ -38,15 +38,18 @@ final class ApplicationCoordinator: BaseCoordinator {
     }
     
     private func runMainFlow() {
-        let mainViewController = factory.makeMainModule()
-        mainViewController.onLoginBtnDidTouch = { [unowned self] in
+        let mainViewModule = factory.makeMainModule()
+        mainViewModule.onLoginBtnDidTouch = { [unowned self] in
             let loginModule = factory.makeLoginModule()
-            loginModule.onFinish = { [unowned self] userInfo in
+            loginModule.onFinish = { [unowned self, weak mainViewModule] user in
+                if let user = user {
+                    mainViewModule?.setUserInfoItem(user: user)
+                }
                 self.router.dismissModule()
             }
             router.present(loginModule)
         }
         
-        router.setRootModule(mainViewController, hideBar: true)
+        router.setRootModule(mainViewModule, hideBar: true)
     }
 }

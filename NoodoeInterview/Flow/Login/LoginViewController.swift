@@ -9,7 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController, StoryboardBased, ResourceLoadingView, ResourceErrorView, LoginView {
     
-    var onFinish: ((UserInfoViewModel?) -> Void)?
+    var onFinish: ((UserInfoItem?) -> Void)?
     var onLoginBtnDidTouch: ((String, String) -> Void)?
     
     @IBAction func didTouchLoginButton(_ sender: Any) {

@@ -13,9 +13,9 @@ protocol UserInfoLoginUseCase {
 
 final class UserInfoLoginAdapter: UserInfoLoginUseCase, ResourceView {
     private var controller: LoginView?
-    var presenter: ResourceLoadingPresenter<UserInfoViewModel, UserInfoLoginAdapter>?
+    var presenter: ResourceLoadingPresenter<UserInfoItem, UserInfoLoginAdapter>?
     
-    init(controller: LoginViewController? = nil, presenter: ResourceLoadingPresenter<UserInfoViewModel, UserInfoLoginAdapter>? = nil) {
+    init(controller: LoginViewController? = nil, presenter: ResourceLoadingPresenter<UserInfoItem, UserInfoLoginAdapter>? = nil) {
         self.controller = controller
         self.presenter = presenter
     }
@@ -37,7 +37,8 @@ final class UserInfoLoginAdapter: UserInfoLoginUseCase, ResourceView {
                   encoder: JsonEncoder()) { [weak self] result in
                 switch result {
                 case let .success((data, response)):
-                    guard let item = UserInfoViewModel.map(data: data, from: response) else { return }
+                    guard let item = UserInfoMapper.map(data: data, from: response) else { return }
+                    // TODO: Store User Data
                     self?.display(item)
                 case let .failure(error):
                     self?.presenter?.didFinishLoading(error: error)
@@ -45,7 +46,7 @@ final class UserInfoLoginAdapter: UserInfoLoginUseCase, ResourceView {
             }
     }
     
-    func display(_ viewModel: UserInfoViewModel) {
+    func display(_ viewModel: UserInfoItem) {
         guard let controller = controller else { return }
         controller.onFinish?(viewModel)
     }

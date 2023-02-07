@@ -17,20 +17,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zm2-LY-FOR">
-                                <rect key="frame" x="159" y="622" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="登入"/>
-                                <connections>
-                                    <action selector="didTouchLoginButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NBo-ao-Jk9"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ig9-GD-E9S">
+                                <rect key="frame" x="64" y="83.000000000000014" width="265" height="134.33333333333337"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kHe-5r-7t6">
+                                        <rect key="frame" x="16" y="7.9999999999999929" width="233" height="118.33333333333331"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iB0-Gt-bfV">
+                                                <rect key="frame" x="0.0" y="0.0" width="233" height="34.333333333333336"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="未登入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1M-Qh-RaU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="165" height="34.333333333333336"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TWq-MP-dHF">
+                                                        <rect key="frame" x="173" y="0.0" width="60" height="34.333333333333336"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zm2-LY-FOR">
+                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="34.333333333333336"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="60" id="paO-mb-AXF"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="登入"/>
+                                                                <connections>
+                                                                    <action selector="didTouchLoginButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NBo-ao-Jk9"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLW-PE-JCN">
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="34.333333333333336"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="時區"/>
+                                                                <connections>
+                                                                    <action selector="didTouchPatchTimeZoneButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6Ii-yx-N6j"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Dy-Xw-jBJ">
+                                                <rect key="frame" x="0.0" y="42.333333333333343" width="233" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMT-hd-ZjX">
+                                                <rect key="frame" x="0.0" y="68.333333333333343" width="233" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" systemColor="opaqueSeparatorColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="kHe-5r-7t6" secondAttribute="bottom" constant="8" id="ETi-Mv-nIS"/>
+                                    <constraint firstItem="kHe-5r-7t6" firstAttribute="top" secondItem="Ig9-GD-E9S" secondAttribute="top" constant="8" id="KH0-sG-yoZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="kHe-5r-7t6" secondAttribute="trailing" constant="16" id="UZc-sO-feK"/>
+                                    <constraint firstItem="kHe-5r-7t6" firstAttribute="leading" secondItem="Ig9-GD-E9S" secondAttribute="leading" constant="16" id="diq-gz-dzS"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ig9-GD-E9S" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="24" id="E9N-ae-Yh5"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ig9-GD-E9S" secondAttribute="trailing" constant="64" id="JhU-Gi-cEV"/>
+                            <constraint firstItem="Ig9-GD-E9S" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="64" id="XbF-W9-NoK"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lastUpdatedLabel" destination="EMT-hd-ZjX" id="XiA-JV-dt5"/>
+                        <outlet property="patchTimeZoneButton" destination="fLW-PE-JCN" id="ji8-qw-aIb"/>
+                        <outlet property="phoneNumLabel" destination="1Dy-Xw-jBJ" id="agG-Po-njc"/>
+                        <outlet property="signInButton" destination="zm2-LY-FOR" id="6Ts-Qv-ads"/>
+                        <outlet property="userInfoContainerView" destination="Ig9-GD-E9S" id="K6H-uk-qDC"/>
+                        <outlet property="userNameLabel" destination="j1M-Qh-RaU" id="30P-s3-9HH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -38,6 +106,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
