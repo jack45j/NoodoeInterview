@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol UserInfoView {
+    var onFinish: (() -> Void)? { get set }
+}
+
 class MainViewController: UIViewController, StoryboardBased {
     
     // MARK: - Outlet

@@ -34,16 +34,20 @@ final class UserInfoLoginAdapter: UserInfoLoginUseCase, ResourceView {
             .post(from: loginEndpoint.url(),
                   header: UserInfoEndPoint.header,
                   params: parameters,
-                  encoder: JsonEncoder()) { [weak self] result in
+                  encoder: JsonEncoder(),
+                  storer: { data in
+                // TODO: Encrypt and Store Data
+                UserDefaults.standard.set(data, forKey: "Noodoe.UserInfoItem")
+            },
+                  completion: { [weak self] result in
                 switch result {
-                case let .success((data, response)):
-                    guard let item = UserInfoMapper.map(data: data, from: response) else { return }
-                    // TODO: Store User Data
+                case let .success((data, _)):
+                    guard let item = UserInfoMapper.map(data: data) else { return }
                     self?.display(item)
                 case let .failure(error):
                     self?.presenter?.didFinishLoading(error: error)
                 }
-            }
+            })
     }
     
     func display(_ viewModel: UserInfoItem) {

@@ -19,6 +19,7 @@
 		DBA49D8C29922A8B0064B30B /* UserInfoItemMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA49D8B29922A8B0064B30B /* UserInfoItemMapperTests.swift */; };
 		DBA49D8D29922B4C0064B30B /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB812DAC29921D0B00DF17BA /* UserInfoViewModel.swift */; };
 		DBA49D8F29922BD30064B30B /* SharedTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA49D8E29922BD30064B30B /* SharedTestHelper.swift */; };
+		DBA49D912992346B0064B30B /* UserInfoUpdateDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA49D902992346B0064B30B /* UserInfoUpdateDataAdapter.swift */; };
 		DBF344CB298CFD430019B286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344CA298CFD430019B286 /* AppDelegate.swift */; };
 		DBF344CF298CFD430019B286 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344CE298CFD430019B286 /* MainViewController.swift */; };
 		DBF344D4298CFD450019B286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBF344D3298CFD450019B286 /* Assets.xcassets */; };
@@ -81,6 +82,7 @@
 		DB812DB229921D8500DF17BA /* ResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceView.swift; sourceTree = "<group>"; };
 		DBA49D8B29922A8B0064B30B /* UserInfoItemMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoItemMapperTests.swift; sourceTree = "<group>"; };
 		DBA49D8E29922BD30064B30B /* SharedTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelper.swift; sourceTree = "<group>"; };
+		DBA49D902992346B0064B30B /* UserInfoUpdateDataAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUpdateDataAdapter.swift; sourceTree = "<group>"; };
 		DBF344C7298CFD430019B286 /* NoodoeInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoodoeInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF344CA298CFD430019B286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBF344CE298CFD430019B286 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -212,7 +214,6 @@
 				DBF3451D2990AB3A0019B286 /* URLSessionHTTPClientTests.swift */,
 				DBA49D8B29922A8B0064B30B /* UserInfoItemMapperTests.swift */,
 				DBF34515298D125F0019B286 /* Helpers */,
-				DBA49D8E29922BD30064B30B /* SharedTestHelper.swift */,
 			);
 			path = NoodoeInterviewTests;
 			sourceTree = "<group>";
@@ -278,6 +279,7 @@
 		DBF34515298D125F0019B286 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DBA49D8E29922BD30064B30B /* SharedTestHelper.swift */,
 				DBF34513298D122D0019B286 /* XCTestCase+MemoryLeakTracking.swift */,
 				DBF3451F2990AB6E0019B286 /* URLProtocolStub.swift */,
 			);
@@ -300,6 +302,7 @@
 				DBF345252990D0F50019B286 /* UserInfoLoginAdapter.swift */,
 				DB812DAC29921D0B00DF17BA /* UserInfoViewModel.swift */,
 				DB812DB029921D7700DF17BA /* UserInfoEndPoint.swift */,
+				DBA49D902992346B0064B30B /* UserInfoUpdateDataAdapter.swift */,
 			);
 			path = UserInfoLoginModule;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				DBF34504298D00EC0019B286 /* Router+Imp.swift in Sources */,
 				DBF345302990EA700019B286 /* ResourceErrorViewModel.swift in Sources */,
 				DBF34506298D010C0019B286 /* AppCoordinator.swift in Sources */,
+				DBA49D912992346B0064B30B /* UserInfoUpdateDataAdapter.swift in Sources */,
 				DB812DB329921D8500DF17BA /* ResourceView.swift in Sources */,
 				DB06EC73299104F8006A6C6D /* LoginViewController.swift in Sources */,
 				DBF345232990ABDD0019B286 /* URLSessionHTTPClient.swift in Sources */,

@@ -8,10 +8,14 @@
 import UIKit
 
 private enum LaunchInstructor {
-    case main
+    case main(UserInfoItem?)
     
     static func configure() -> LaunchInstructor {
-        return .main
+        if let userData = UserDefaults.standard.data(forKey: "Noodoe.UserInfoItem"),
+           let user = UserInfoMapper.map(data: userData) {
+            return .main(user)
+        }
+        return .main(nil)
     }
 }
 
@@ -33,11 +37,11 @@ final class ApplicationCoordinator: BaseCoordinator {
     
     override func start() {
         switch instructor {
-        case .main: runMainFlow()
+        case let .main(user): runMainFlow(user: user)
         }
     }
     
-    private func runMainFlow() {
+    private func runMainFlow(user: UserInfoItem?) {
         let mainViewModule = factory.makeMainModule()
         mainViewModule.onLoginBtnDidTouch = { [unowned self] in
             let loginModule = factory.makeLoginModule()
@@ -51,5 +55,9 @@ final class ApplicationCoordinator: BaseCoordinator {
         }
         
         router.setRootModule(mainViewModule, hideBar: true)
+        if let user = user {
+            mainViewModule.loadViewIfNeeded()
+            mainViewModule.setUserInfoItem(user: user)
+        }
     }
 }
