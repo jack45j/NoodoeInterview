@@ -69,6 +69,7 @@ final class UserInfoMapper {
     }
     
     static func map(data: Data, from response: HTTPURLResponse) -> UserInfoItem? {
+        // TODO: Error handling
         guard response.statusCode == 200,
               let item = try? JSONDecoder().decode(RemoteUserInfoItem.self, from: data) else {
             return nil

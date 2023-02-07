@@ -175,34 +175,6 @@ final class URLSessionHTTPClientTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
         return receivedResult
     }
-    
-    private func anyNSError() -> NSError {
-        return NSError(domain: "any error", code: 0)
-    }
-    
-    private func anyURL() -> URL {
-        return URL(string: "http://anyURL.com")!
-    }
-    
-    private func anyHeader() -> URLSessionHTTPClient.Header {
-        return ["SomeHeaderKey": "SomeHeaderValue"]
-    }
-    
-    private func anyParams() -> URLSessionHTTPClient.Params {
-        return ["someParamsKey": "anyParamsValue"]
-    }
-    
-    func anyData() -> Data {
-        return Data("any data".utf8)
-    }
-    
-    private func anyHTTPURLResponse() -> HTTPURLResponse {
-        return HTTPURLResponse(url: anyURL(), statusCode: 200, httpVersion: nil, headerFields: nil)!
-    }
-    
-    private func nonHTTPURLResponse() -> URLResponse {
-        return URLResponse(url: anyURL(), mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
-    }
 }
 
 private extension Dictionary where Key: Hashable, Value: Equatable {
