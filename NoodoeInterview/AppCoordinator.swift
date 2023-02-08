@@ -8,16 +8,10 @@
 import UIKit
 
 private enum LaunchInstructor {
-    case main(UserInfoItem?)
+    case main
     
     static func configure() -> LaunchInstructor {
-        // pass previous user data to main flow
-        if let userData = UserDefaults.standard.data(forKey: "Noodoe.UserInfoItem"),
-           let user = UserInfoMapper.map(data: userData) {
-            return .main(user)
-        } else {
-            return .main(nil)
-        }
+        return .main
     }
 }
 
@@ -39,11 +33,12 @@ final class ApplicationCoordinator: BaseCoordinator {
     
     override func start() {
         switch instructor {
-        case let .main(user): runMainFlow(user: user)
+        case let .main: runMainFlow()
         }
     }
     
-    private func runMainFlow(user: UserInfoItem?) {
+    private func runMainFlow() {
+        let user = try? LocalUserInfoStore().retrieve().get()
         let mainViewModule = factory.makeMainModule()
         mainViewModule.onLoginShouldStart = { [unowned self] in
             let loginModule = factory.makeLoginModule()

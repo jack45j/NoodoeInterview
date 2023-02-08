@@ -25,7 +25,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
             XCTAssertTrue(request.allHTTPHeaderFields!.contains(dict: header))
             exp.fulfill()
         }
-        makeSUT().get(from: url, header: header, params: params, encoder: jsonEncoder, storer: nil) { _ in }
+        makeSUT().get(from: url, header: header, params: params, encoder: jsonEncoder) { _ in }
         
         wait(for: [exp], timeout: 1)
     }
@@ -42,7 +42,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
             XCTAssertTrue(request.allHTTPHeaderFields!.contains(dict: header))
             exp.fulfill()
         }
-        makeSUT().post(from: url, header: header, params: params, encoder: jsonEncoder, storer: nil) { _ in }
+        makeSUT().post(from: url, header: header, params: params, encoder: jsonEncoder) { _ in }
         
         wait(for: [exp], timeout: 1)
     }
@@ -59,7 +59,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
             XCTAssertTrue(request.allHTTPHeaderFields!.contains(dict: header))
             exp.fulfill()
         }
-        makeSUT().put(from: url, header: header, params: params, encoder: jsonEncoder, storer: nil) { _ in }
+        makeSUT().put(from: url, header: header, params: params, encoder: jsonEncoder) { _ in }
         
         wait(for: [exp], timeout: 1)
     }
@@ -131,10 +131,9 @@ final class URLSessionHTTPClientTests: XCTestCase {
     // swiftlint: disable large_tuple
     private func resultValuesFor(_ values: (data: Data?, response: URLResponse?, error: Error?),
                                  file: StaticString = #filePath, line: UInt = #line) -> (data: Data, response: HTTPURLResponse)? {
-        let (result, data) = resultFor(values, file: file, line: line)
+        let result = resultFor(values, file: file, line: line)
         switch result {
         case let .success(values):
-            XCTAssertNotNil(data)
             return values
         default:
             XCTFail("Expected success, got \(result) instead", file: file, line: line)
@@ -146,7 +145,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
     private func resultErrorFor(_ values: (data: Data?, response: URLResponse?, error: Error?)? = nil,
                                 taskHandler: (HTTPClientTask) -> Void = { _ in },
                                 file: StaticString = #filePath, line: UInt = #line) -> Error? {
-        let (result, _) = resultFor(values, taskHandler: taskHandler, file: file, line: line)
+        let result = resultFor(values, taskHandler: taskHandler, file: file, line: line)
         
         switch result {
         case let .failure(error):
@@ -160,23 +159,20 @@ final class URLSessionHTTPClientTests: XCTestCase {
     // swiftlint: disable large_tuple
     private func resultFor(_ values: (data: Data?, response: URLResponse?, error: Error?)?,
                            taskHandler: (HTTPClientTask) -> Void = { _ in },
-                           file: StaticString = #filePath, line: UInt = #line) -> (HTTPClient.Result, Data?) {
+                           file: StaticString = #filePath, line: UInt = #line) -> HTTPClient.Result {
         values.map { URLProtocolStub.stub(data: $0, response: $1, error: $2) }
         
         let sut = makeSUT(file: file, line: line)
         let exp = expectation(description: "Wait for completion")
         
         var receivedResult: HTTPClient.Result!
-        var receivedData: Data?
-        taskHandler(sut.get(from: anyURL(), header: anyHeader(), params: anyParams(), encoder: JsonEncoder(), storer: { data in
-            receivedData = data
-        }) { result in
+        taskHandler(sut.get(from: anyURL(), header: anyHeader(), params: anyParams(), encoder: JsonEncoder()) { result in
             receivedResult = result
             exp.fulfill()
         })
         
         wait(for: [exp], timeout: 1.0)
-        return (receivedResult, receivedData)
+        return receivedResult
     }
 }
 

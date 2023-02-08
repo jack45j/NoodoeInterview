@@ -18,11 +18,11 @@ protocol HTTPClient {
     typealias Completion = (Result) -> Void
     
     @discardableResult
-    func get(from url: URL, header: Header, params: Params, encoder: ParametersEncoder, storer: ((Data) -> Void)?, completion: @escaping (Result) -> Void) -> HTTPClientTask
+    func get(from url: URL, header: Header, params: Params, encoder: ParametersEncoder, completion: @escaping (Result) -> Void) -> HTTPClientTask
     
     @discardableResult
-    func post(from url: URL, header: Header, params: Params, encoder: ParametersEncoder, storer: ((Data) -> Void)?, completion: @escaping (Result) -> Void) -> HTTPClientTask
+    func post(from url: URL, header: Header, params: Params, encoder: ParametersEncoder, completion: @escaping (Result) -> Void) -> HTTPClientTask
     
     @discardableResult
-    func put(from url: URL, header: Header, params: Params, encoder: ParametersEncoder, storer: ((Data) -> Void)?, completion: @escaping (Result) -> Void) -> HTTPClientTask
+    func put(from url: URL, header: Header, params: Params, encoder: ParametersEncoder, completion: @escaping (Result) -> Void) -> HTTPClientTask
 }

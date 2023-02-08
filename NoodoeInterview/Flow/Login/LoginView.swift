@@ -8,6 +8,5 @@
 import Foundation
 
 protocol LoginView {
-    // TODO: pass user data 
     var onFinish: ((UserInfoItem?) -> Void)? { get set }
 }

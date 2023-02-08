@@ -32,6 +32,13 @@ class MainViewController: UIViewController, StoryboardBased, UserInfoView {
     var onLogOutShouldStart: (() -> Void)?
     var onPatchTimeZoneShouldStart: (() -> Void)?
     
+    private lazy var loadingView: UIActivityIndicatorView = {
+        let loadingView = UIActivityIndicatorView(frame: view.frame)
+        loadingView.style = .large
+        view.addSubview(loadingView)
+        return loadingView
+    }()
+    
     // MARK: - Main
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,12 +58,12 @@ class MainViewController: UIViewController, StoryboardBased, UserInfoView {
     func userDataDidChange(user: UserInfoItem?) {
         DispatchQueue.main.async {
             self.userNameLabel.text = user?.username ?? "未登入"
-            self.phoneNumLabel.text = user?.phone ?? ""
+            self.phoneNumLabel.text = user?.phone ?? "-"
             if let updatedDate = user?.updatedDate {
                 self.lastUpdatedLabel.text = DateFormatter.localizedString(
                     from: updatedDate,
                     dateStyle: .short,
-                    timeStyle: .short
+                    timeStyle: .medium
                 )
             } else {
                 self.lastUpdatedLabel.text = ""
@@ -83,18 +90,23 @@ class MainViewController: UIViewController, StoryboardBased, UserInfoView {
 
 extension MainViewController: ResourceErrorView, ResourceLoadingView {
     func display(_ viewModel: ResourceErrorViewModel) {
-        
+        guard let errorMessage = viewModel.message else { return }
+        DispatchQueue.main.async {
+            let errorView = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+            self.present(errorView, animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                errorView.dismiss(animated: true)
+            }
+        }
     }
     
     func display(_ viewModel: ResourceLoadingViewModel) {
-        let loadingView = UIActivityIndicatorView(frame: view.frame)
-        loadingView.style = .large
-        view.addSubview(loadingView)
-        if viewModel.isLoading {
-            loadingView.startAnimating()
-        } else {
-            loadingView.stopAnimating()
-            loadingView.removeFromSuperview()
+        DispatchQueue.main.async {
+            if viewModel.isLoading {
+                self.loadingView.startAnimating()
+            } else {
+                self.loadingView.stopAnimating()
+            }
         }
     }
 }

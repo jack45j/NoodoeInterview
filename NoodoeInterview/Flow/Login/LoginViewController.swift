@@ -7,28 +7,49 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, StoryboardBased, ResourceLoadingView, ResourceErrorView, LoginView {
+class LoginViewController: UIViewController, StoryboardBased, LoginView {
     
+    // MARK: - var
     var onFinish: ((UserInfoItem?) -> Void)?
     var onLoginBtnDidTouch: ((String, String) -> Void)?
     
-    @IBAction func didTouchLoginButton(_ sender: Any) {
-        onLoginBtnDidTouch?("test2@qq.com", "test1234qq")
-    }
+    // MARK: - Outlet
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
-    func display(_ viewModel: ResourceLoadingViewModel) {
+    private lazy var loadingView: UIActivityIndicatorView = {
         let loadingView = UIActivityIndicatorView(frame: view.frame)
         loadingView.style = .large
         view.addSubview(loadingView)
-        if viewModel.isLoading {
-            loadingView.startAnimating()
-        } else {
-            loadingView.stopAnimating()
-            loadingView.removeFromSuperview()
+        return loadingView
+    }()
+    
+    // MARK: - Action
+    @IBAction func didTouchLoginButton(_ sender: Any) {
+        onLoginBtnDidTouch?(userNameTextField.text ?? "", passwordTextField.text ?? "")
+    }
+}
+
+extension LoginViewController: ResourceLoadingView, ResourceErrorView {
+    func display(_ viewModel: ResourceLoadingViewModel) {
+        DispatchQueue.main.async {
+            if viewModel.isLoading {
+                self.loadingView.startAnimating()
+            } else {
+                self.loadingView.stopAnimating()
+            }
         }
     }
     
     func display(_ viewModel: ResourceErrorViewModel) {
-        print("error: \(viewModel.message)")
+        guard let errorMessage = viewModel.message else { return }
+        
+        DispatchQueue.main.async {
+            let errorView = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+            self.present(errorView, animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                errorView.dismiss(animated: true)
+            }
+        }
     }
 }

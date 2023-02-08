@@ -21,6 +21,11 @@ final class UserInfoLoginAdapter: UserInfoLoginUseCase, ResourceView {
     }
     
     func login(userName: String, password: String) {
+        guard userName != "" && password != "" else {
+            presenter?.didFinishLoading(errorMessage: "Username and Password should not be Empty")
+            return
+        }
+        
         presenter?.didStartLoading()
         
         let loginEndpoint = UserInfoEndPoint.signIn
@@ -35,15 +40,16 @@ final class UserInfoLoginAdapter: UserInfoLoginUseCase, ResourceView {
                   header: UserInfoEndPoint.header,
                   params: parameters,
                   encoder: JsonEncoder(),
-                  storer: { data in
-                // TODO: Encrypt and Store Data
-                UserDefaults.standard.set(data, forKey: "Noodoe.UserInfoItem")
-            },
                   completion: { [weak self] result in
                 switch result {
                 case let .success((data, _)):
-                    guard let item = UserInfoMapper.map(data: data) else { return }
-                    self?.display(item)
+                    switch UserInfoMapper.map(data: data) {
+                    case let .success(user):
+                        LocalUserInfoStore().cacheData(data)
+                        self?.presenter?.didFinishLoading(resource: user)
+                    case .failure:
+                        self?.presenter?.didFinishLoading(errorMessage: "Login Failed")
+                    }
                 case let .failure(error):
                     self?.presenter?.didFinishLoading(error: error)
                 }

@@ -14,24 +14,21 @@ protocol UserInfoUpdateDataUseCase {
 
 final class UserInfoUpdateDataAdapter: UserInfoUpdateDataUseCase, ResourceView {
     private var controller: UserInfoView?
-    var presenter: ResourceLoadingPresenter<UserInfoItem, UserInfoUpdateDataAdapter>?
+    var presenter: ResourceLoadingPresenter<UserInfoItem?, UserInfoUpdateDataAdapter>?
     
-    init(controller: UserInfoView? = nil, presenter: ResourceLoadingPresenter<UserInfoItem, UserInfoUpdateDataAdapter>? = nil) {
+    init(controller: UserInfoView? = nil, presenter: ResourceLoadingPresenter<UserInfoItem?, UserInfoUpdateDataAdapter>? = nil) {
         self.controller = controller
         self.presenter = presenter
     }
     
     func signOut() {
-        UserDefaults.standard.set(nil, forKey: "Noodoe.UserInfoItem")
+        LocalUserInfoStore().deleteCacheData()
         controller?.userDataDidChange(user: nil)
     }
     
     func patchTimeZone() {
         presenter?.didStartLoading()
-        guard
-            let userData = UserDefaults.standard.data(forKey: "Noodoe.UserInfoItem"),
-            let user = UserInfoMapper.map(data: userData)
-        else {
+        guard let user = try? LocalUserInfoStore().retrieve().get() else {
             presenter?.didFinishLoading(errorMessage: "Session expired or Incorrect User Info")
             return
         }
@@ -50,15 +47,24 @@ final class UserInfoUpdateDataAdapter: UserInfoUpdateDataUseCase, ResourceView {
                  header: header,
                  params: parameter,
                  encoder: JsonEncoder(),
-                 storer: { data in
-                // TODO: Encrypt and Store Data
-                
-            },
                  completion: { [weak self] result in
                 switch result {
                 case let .success((data, _)):
-                    guard let item = UserInfoMapper.map(data: data) else { return }
-                    self?.display(item)
+                    guard let updatedTime = UserInfoMapper.map(dateData: data),
+                          var user = try? LocalUserInfoStore().retrieve().get()
+                    else {
+                        self?.presenter?.didFinishLoading(errorMessage: "Login Session expired or invalid User Data")
+                        return
+                    }
+                    
+                    user.updatedDate = updatedTime
+                    guard let data = try? UserInfoMapper.map(data: user).get(),
+                          let _ = try? LocalUserInfoStore().cacheData(data) else {
+                        self?.presenter?.didFinishLoading(errorMessage: "Login Session expired or invalid User Data")
+                        return
+                    }
+                    
+                    self?.presenter?.didFinishLoading(resource: user)
                 case let .failure(error):
                     self?.presenter?.didFinishLoading(error: error)
                 }
@@ -67,6 +73,6 @@ final class UserInfoUpdateDataAdapter: UserInfoUpdateDataUseCase, ResourceView {
     
     func display(_ viewModel: UserInfoItem?) {
         guard let controller = controller else { return }
-        controller.onFinish?()
+        controller.userDataDidChange(user: viewModel)
     }
 }

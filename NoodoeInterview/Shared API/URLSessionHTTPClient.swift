@@ -33,31 +33,27 @@ final class URLSessionHTTPClient: HTTPClient {
     @discardableResult
     func get(from url: URL, header: Header, params: Params,
              encoder: ParametersEncoder,
-             storer: ((Data) -> Void)?,
              completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
-        executeRequest(from: url, method: .get, header: header, params: params, encoder: encoder, storer: storer, completion: completion)
+        executeRequest(from: url, method: .get, header: header, params: params, encoder: encoder, completion: completion)
     }
     
     @discardableResult
     func post(from url: URL, header: Header, params: Params,
               encoder: ParametersEncoder,
-              storer: ((Data) -> Void)?,
               completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
-        executeRequest(from: url, method: .post, header: header, params: params, encoder: encoder, storer: storer, completion: completion)
+        executeRequest(from: url, method: .post, header: header, params: params, encoder: encoder, completion: completion)
     }
     
     @discardableResult
     func put(from url: URL, header: Header, params: Params,
              encoder: ParametersEncoder,
-             storer: ((Data) -> Void)?,
              completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
-        executeRequest(from: url, method: .put, header: header, params: params, encoder: encoder, storer: storer, completion: completion)
+        executeRequest(from: url, method: .put, header: header, params: params, encoder: encoder, completion: completion)
     }
     
     private func executeRequest(
         from url: URL, method: HTTPRequestMethod, header: Header,
         params: Params, encoder: ParametersEncoder,
-        storer: ((Data) -> Void)?,
         completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
             var request = URLRequest(url: url)
             request.httpMethod = method.rawValue
@@ -69,7 +65,6 @@ final class URLSessionHTTPClient: HTTPClient {
                     if let error = error {
                         throw error
                     } else if let data = data, let response = response as? HTTPURLResponse {
-                        storer?(data)
                         return (data, response)
                     } else {
                         throw UnexpectedValuesRepresentation()
