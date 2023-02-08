@@ -22,6 +22,13 @@
 		DBA49D912992346B0064B30B /* UserInfoUpdateDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA49D902992346B0064B30B /* UserInfoUpdateDataAdapter.swift */; };
 		DBED059F29939DD500DF5DD1 /* UserInfoEndPointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBED059E29939DD500DF5DD1 /* UserInfoEndPointTests.swift */; };
 		DBED05A029939DFD00DF5DD1 /* UserInfoEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB812DB029921D7700DF17BA /* UserInfoEndPoint.swift */; };
+		DBED05A22993A05100DF5DD1 /* ResourceLoadingPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBED05A12993A05100DF5DD1 /* ResourceLoadingPresenterTests.swift */; };
+		DBED05A32993A05300DF5DD1 /* ResourceLoadingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB812DAE29921D3D00DF17BA /* ResourceLoadingPresenter.swift */; };
+		DBED05A42993A09B00DF5DD1 /* ResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB812DB229921D8500DF17BA /* ResourceView.swift */; };
+		DBED05A52993A09F00DF5DD1 /* ResourceErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF345312990EA7D0019B286 /* ResourceErrorView.swift */; };
+		DBED05A62993A0A200DF5DD1 /* ResourceLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF345282990E98B0019B286 /* ResourceLoadingView.swift */; };
+		DBED05A72993A11100DF5DD1 /* ResourceErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3452F2990EA700019B286 /* ResourceErrorViewModel.swift */; };
+		DBED05A82993A11600DF5DD1 /* ResourceLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3452A2990E9BD0019B286 /* ResourceLoadingViewModel.swift */; };
 		DBF344CB298CFD430019B286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344CA298CFD430019B286 /* AppDelegate.swift */; };
 		DBF344CF298CFD430019B286 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344CE298CFD430019B286 /* MainViewController.swift */; };
 		DBF344D4298CFD450019B286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBF344D3298CFD450019B286 /* Assets.xcassets */; };
@@ -86,6 +93,7 @@
 		DBA49D8E29922BD30064B30B /* SharedTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelper.swift; sourceTree = "<group>"; };
 		DBA49D902992346B0064B30B /* UserInfoUpdateDataAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUpdateDataAdapter.swift; sourceTree = "<group>"; };
 		DBED059E29939DD500DF5DD1 /* UserInfoEndPointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoEndPointTests.swift; sourceTree = "<group>"; };
+		DBED05A12993A05100DF5DD1 /* ResourceLoadingPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingPresenterTests.swift; sourceTree = "<group>"; };
 		DBF344C7298CFD430019B286 /* NoodoeInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoodoeInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF344CA298CFD430019B286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBF344CE298CFD430019B286 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +226,7 @@
 				DBA49D8B29922A8B0064B30B /* UserInfoItemMapperTests.swift */,
 				DBF34515298D125F0019B286 /* Helpers */,
 				DBED059E29939DD500DF5DD1 /* UserInfoEndPointTests.swift */,
+				DBED05A12993A05100DF5DD1 /* ResourceLoadingPresenterTests.swift */,
 			);
 			path = NoodoeInterviewTests;
 			sourceTree = "<group>";
@@ -517,15 +526,22 @@
 				DBF345332990EE7E0019B286 /* ParametersEncoder.swift in Sources */,
 				DBED05A029939DFD00DF5DD1 /* UserInfoEndPoint.swift in Sources */,
 				DBF344E2298CFD450019B286 /* BaseCoordinatorTests.swift in Sources */,
+				DBED05A62993A0A200DF5DD1 /* ResourceLoadingView.swift in Sources */,
 				DBA49D8F29922BD30064B30B /* SharedTestHelper.swift in Sources */,
 				DBA49D8D29922B4C0064B30B /* UserInfoViewModel.swift in Sources */,
 				DBA49D8C29922A8B0064B30B /* UserInfoItemMapperTests.swift in Sources */,
+				DBED05A82993A11600DF5DD1 /* ResourceLoadingViewModel.swift in Sources */,
+				DBED05A72993A11100DF5DD1 /* ResourceErrorViewModel.swift in Sources */,
 				DBF345212990ABB70019B286 /* HTTPClient.swift in Sources */,
+				DBED05A32993A05300DF5DD1 /* ResourceLoadingPresenter.swift in Sources */,
 				DBF3451E2990AB3A0019B286 /* URLSessionHTTPClientTests.swift in Sources */,
 				DBF34514298D122D0019B286 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				DBF345202990AB6E0019B286 /* URLProtocolStub.swift in Sources */,
+				DBED05A42993A09B00DF5DD1 /* ResourceView.swift in Sources */,
 				DBED059F29939DD500DF5DD1 /* UserInfoEndPointTests.swift in Sources */,
+				DBED05A22993A05100DF5DD1 /* ResourceLoadingPresenterTests.swift in Sources */,
 				DBF345242990AE7D0019B286 /* URLSessionHTTPClient.swift in Sources */,
+				DBED05A52993A09F00DF5DD1 /* ResourceErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

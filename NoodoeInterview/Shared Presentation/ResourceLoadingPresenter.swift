@@ -39,6 +39,7 @@ final class ResourceLoadingPresenter<Resource, View: ResourceView> {
             loadingView.display(.init(isLoading: false))
         case let .failure(err):
             errorView.display(.error(message: err.localizedDescription))
+            loadingView.display(.init(isLoading: false))
         }
     }
     

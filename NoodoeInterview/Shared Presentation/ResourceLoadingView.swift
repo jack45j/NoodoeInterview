@@ -11,12 +11,3 @@ import UIKit
 protocol ResourceLoadingView {
     func display(_ viewModel: ResourceLoadingViewModel)
 }
-
-extension ResourceLoadingView where Self: UIViewController {
-    var loadingView: UIActivityIndicatorView {
-        let loadingView = UIActivityIndicatorView(frame: self.view.frame)
-        loadingView.style = .large
-        view.addSubview(loadingView)
-        return loadingView
-    }
-}
