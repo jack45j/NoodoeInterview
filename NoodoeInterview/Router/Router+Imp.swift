@@ -14,7 +14,6 @@ class RouterImp: Router {
     
     init(rootController: UINavigationController) {
         self.rootController = rootController
-        self.rootController?.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Bacdawld;awd;awkdok", style: .plain, target: nil, action: nil)
         completions = [:]
     }
     
