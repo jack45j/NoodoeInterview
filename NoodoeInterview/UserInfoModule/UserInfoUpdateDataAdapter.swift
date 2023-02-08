@@ -9,7 +9,7 @@ import Foundation
 
 protocol UserInfoUpdateDataUseCase {
     func signOut()
-    func patchTimeZone()
+    func patchTimeZone(to timezone: Int)
 }
 
 final class UserInfoUpdateDataAdapter: UserInfoUpdateDataUseCase, ResourceView {
@@ -26,7 +26,7 @@ final class UserInfoUpdateDataAdapter: UserInfoUpdateDataUseCase, ResourceView {
         controller?.userDataDidChange(user: nil)
     }
     
-    func patchTimeZone() {
+    func patchTimeZone(to timezone: Int) {
         presenter?.didStartLoading()
         guard let user = try? LocalUserInfoStore().retrieve().get() else {
             presenter?.didFinishLoading(errorMessage: "Session expired or Incorrect User Info")
@@ -39,7 +39,7 @@ final class UserInfoUpdateDataAdapter: UserInfoUpdateDataUseCase, ResourceView {
         header["X-Parse-Session-Token"] = user.sessionToken
         
         let parameter = [
-            "timezone": 8
+            "timezone": timezone
         ]
         
         URLSessionHTTPClient(session: .init(configuration: .ephemeral))

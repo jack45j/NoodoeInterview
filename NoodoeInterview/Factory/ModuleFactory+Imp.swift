@@ -19,7 +19,7 @@ final class ModuleFactoryImp: ModuleFactory {
             mapper: { $0 }
         )
         module.onLogOutShouldStart = adapter.signOut
-        module.onPatchTimeZoneShouldStart = adapter.patchTimeZone
+        module.onPatchTimeZoneShouldStart = { adapter.patchTimeZone(to: Int.random(in: 0...8)) }
         
         return module
     }

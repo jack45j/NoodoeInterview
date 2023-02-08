@@ -71,6 +71,10 @@ class MainViewController: UIViewController, StoryboardBased, UserInfoView {
             self.signInButton.isHidden = user != nil
             self.signOutButton.isHidden = user == nil
             self.patchTimeZoneButton.isHidden = user == nil
+            
+            UIView.animate(withDuration: 0.3, delay: 0) { [unowned self] in
+                self.view.layoutSubviews()
+            }
         }
     }
     
