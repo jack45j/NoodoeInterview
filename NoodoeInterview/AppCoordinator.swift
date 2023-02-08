@@ -33,7 +33,7 @@ final class ApplicationCoordinator: BaseCoordinator {
     
     override func start() {
         switch instructor {
-        case let .main: runMainFlow()
+        case .main: runMainFlow()
         }
     }
     

@@ -68,7 +68,6 @@ final class ResourceLoadingPresenterTests: XCTestCase {
     
     private class ViewSpy: ResourceView, ResourceLoadingView, ResourceErrorView {
         
-        // swiftlint: disable duplicate_enum_cases nesting
         typealias ResourceViewModel = String
         
         enum Message: Hashable {

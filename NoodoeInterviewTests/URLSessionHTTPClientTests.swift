@@ -128,7 +128,6 @@ final class URLSessionHTTPClientTests: XCTestCase {
         return sut
     }
     
-    // swiftlint: disable large_tuple
     private func resultValuesFor(_ values: (data: Data?, response: URLResponse?, error: Error?),
                                  file: StaticString = #filePath, line: UInt = #line) -> (data: Data, response: HTTPURLResponse)? {
         let result = resultFor(values, file: file, line: line)
@@ -141,7 +140,6 @@ final class URLSessionHTTPClientTests: XCTestCase {
         }
     }
     
-    // swiftlint: disable large_tuple
     private func resultErrorFor(_ values: (data: Data?, response: URLResponse?, error: Error?)? = nil,
                                 taskHandler: (HTTPClientTask) -> Void = { _ in },
                                 file: StaticString = #filePath, line: UInt = #line) -> Error? {
@@ -156,7 +154,6 @@ final class URLSessionHTTPClientTests: XCTestCase {
         }
     }
     
-    // swiftlint: disable large_tuple
     private func resultFor(_ values: (data: Data?, response: URLResponse?, error: Error?)?,
                            taskHandler: (HTTPClientTask) -> Void = { _ in },
                            file: StaticString = #filePath, line: UInt = #line) -> HTTPClient.Result {

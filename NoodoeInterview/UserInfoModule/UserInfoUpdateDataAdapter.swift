@@ -59,7 +59,7 @@ final class UserInfoUpdateDataAdapter: UserInfoUpdateDataUseCase, ResourceView {
                     
                     user.updatedDate = updatedTime
                     guard let data = try? UserInfoMapper.map(data: user).get(),
-                          let _ = try? LocalUserInfoStore().cacheData(data) else {
+                          let _ = try? LocalUserInfoStore().cacheData(data).get() else {
                         self?.presenter?.didFinishLoading(errorMessage: "Login Session expired or invalid User Data")
                         return
                     }
