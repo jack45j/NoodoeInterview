@@ -30,8 +30,12 @@
 		DBED05A72993A11100DF5DD1 /* ResourceErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3452F2990EA700019B286 /* ResourceErrorViewModel.swift */; };
 		DBED05A82993A11600DF5DD1 /* ResourceLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3452A2990E9BD0019B286 /* ResourceLoadingViewModel.swift */; };
 		DBED05AA2993ACA900DF5DD1 /* UserInfoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBED05A92993ACA900DF5DD1 /* UserInfoStore.swift */; };
+		DBED05AC29948FFD00DF5DD1 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBED05AB29948FFD00DF5DD1 /* LaunchViewController.swift */; };
+		DBED05AE2994900400DF5DD1 /* LaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBED05AD2994900400DF5DD1 /* LaunchViewController.storyboard */; };
+		DBED05B0299490A300DF5DD1 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBED05AF299490A300DF5DD1 /* LaunchView.swift */; };
+		DBED05B32994923200DF5DD1 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBED05B22994923200DF5DD1 /* UserInfoView.swift */; };
 		DBF344CB298CFD430019B286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344CA298CFD430019B286 /* AppDelegate.swift */; };
-		DBF344CF298CFD430019B286 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344CE298CFD430019B286 /* MainViewController.swift */; };
+		DBF344CF298CFD430019B286 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344CE298CFD430019B286 /* UserInfoViewController.swift */; };
 		DBF344D4298CFD450019B286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBF344D3298CFD450019B286 /* Assets.xcassets */; };
 		DBF344D7298CFD450019B286 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBF344D5298CFD450019B286 /* LaunchScreen.storyboard */; };
 		DBF344E2298CFD450019B286 /* BaseCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344E1298CFD450019B286 /* BaseCoordinatorTests.swift */; };
@@ -47,7 +51,7 @@
 		DBF3450A298D01540019B286 /* CoordinatorFactory+Imp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF34509298D01540019B286 /* CoordinatorFactory+Imp.swift */; };
 		DBF34514298D122D0019B286 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF34513298D122D0019B286 /* XCTestCase+MemoryLeakTracking.swift */; };
 		DBF34517298D14820019B286 /* StoryboardSceneBased.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF34516298D14820019B286 /* StoryboardSceneBased.swift */; };
-		DBF34519298D15010019B286 /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBF34518298D15010019B286 /* MainViewController.storyboard */; };
+		DBF34519298D15010019B286 /* UserInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBF34518298D15010019B286 /* UserInfoViewController.storyboard */; };
 		DBF3451B2990A9BB0019B286 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3451A2990A9BB0019B286 /* HTTPClient.swift */; };
 		DBF3451E2990AB3A0019B286 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3451D2990AB3A0019B286 /* URLSessionHTTPClientTests.swift */; };
 		DBF345202990AB6E0019B286 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF3451F2990AB6E0019B286 /* URLProtocolStub.swift */; };
@@ -96,9 +100,13 @@
 		DBED059E29939DD500DF5DD1 /* UserInfoEndPointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoEndPointTests.swift; sourceTree = "<group>"; };
 		DBED05A12993A05100DF5DD1 /* ResourceLoadingPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingPresenterTests.swift; sourceTree = "<group>"; };
 		DBED05A92993ACA900DF5DD1 /* UserInfoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoStore.swift; sourceTree = "<group>"; };
+		DBED05AB29948FFD00DF5DD1 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		DBED05AD2994900400DF5DD1 /* LaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchViewController.storyboard; sourceTree = "<group>"; };
+		DBED05AF299490A300DF5DD1 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		DBED05B22994923200DF5DD1 /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		DBF344C7298CFD430019B286 /* NoodoeInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoodoeInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF344CA298CFD430019B286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DBF344CE298CFD430019B286 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		DBF344CE298CFD430019B286 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		DBF344D3298CFD450019B286 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBF344D6298CFD450019B286 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBF344D8298CFD450019B286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,7 +125,7 @@
 		DBF34509298D01540019B286 /* CoordinatorFactory+Imp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoordinatorFactory+Imp.swift"; sourceTree = "<group>"; };
 		DBF34513298D122D0019B286 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		DBF34516298D14820019B286 /* StoryboardSceneBased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardSceneBased.swift; sourceTree = "<group>"; };
-		DBF34518298D15010019B286 /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
+		DBF34518298D15010019B286 /* UserInfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserInfoViewController.storyboard; sourceTree = "<group>"; };
 		DBF3451A2990A9BB0019B286 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		DBF3451D2990AB3A0019B286 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		DBF3451F2990AB6E0019B286 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
@@ -165,22 +173,34 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		DB06EC7929910887006A6C6D /* Landing */ = {
+		DB06EC7929910887006A6C6D /* UserInfo */ = {
 			isa = PBXGroup;
 			children = (
-				DBF344CE298CFD430019B286 /* MainViewController.swift */,
-				DBF34518298D15010019B286 /* MainViewController.storyboard */,
+				DBED05B22994923200DF5DD1 /* UserInfoView.swift */,
+				DBF344CE298CFD430019B286 /* UserInfoViewController.swift */,
+				DBF34518298D15010019B286 /* UserInfoViewController.storyboard */,
 			);
-			path = Landing;
+			path = UserInfo;
 			sourceTree = "<group>";
 		};
 		DB06EC7A29910894006A6C6D /* Flow */ = {
 			isa = PBXGroup;
 			children = (
-				DB06EC7929910887006A6C6D /* Landing */,
+				DBED05B12994913C00DF5DD1 /* Launch */,
+				DB06EC7929910887006A6C6D /* UserInfo */,
 				DB06EC7829910881006A6C6D /* Login */,
 			);
 			path = Flow;
+			sourceTree = "<group>";
+		};
+		DBED05B12994913C00DF5DD1 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				DBED05AF299490A300DF5DD1 /* LaunchView.swift */,
+				DBED05AB29948FFD00DF5DD1 /* LaunchViewController.swift */,
+				DBED05AD2994900400DF5DD1 /* LaunchViewController.storyboard */,
+			);
+			path = Launch;
 			sourceTree = "<group>";
 		};
 		DBF344BE298CFD430019B286 = {
@@ -442,7 +462,8 @@
 			files = (
 				DBF344D7298CFD450019B286 /* LaunchScreen.storyboard in Resources */,
 				DB06EC7529910523006A6C6D /* LoginViewController.storyboard in Resources */,
-				DBF34519298D15010019B286 /* MainViewController.storyboard in Resources */,
+				DBF34519298D15010019B286 /* UserInfoViewController.storyboard in Resources */,
+				DBED05AE2994900400DF5DD1 /* LaunchViewController.storyboard in Resources */,
 				DBF344D4298CFD450019B286 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBF344FB298CFDF20019B286 /* Coordinator.swift in Sources */,
+				DBED05AC29948FFD00DF5DD1 /* LaunchViewController.swift in Sources */,
 				DBF34500298CFE820019B286 /* BaseCoordinator.swift in Sources */,
 				DBF345262990D0F50019B286 /* UserInfoLoginAdapter.swift in Sources */,
 				DBF345322990EA7D0019B286 /* ResourceErrorView.swift in Sources */,
@@ -476,15 +498,17 @@
 				DBF3452E2990E9EA0019B286 /* ParametersEncoder.swift in Sources */,
 				DBF3451B2990A9BB0019B286 /* HTTPClient.swift in Sources */,
 				DBED05AA2993ACA900DF5DD1 /* UserInfoStore.swift in Sources */,
-				DBF344CF298CFD430019B286 /* MainViewController.swift in Sources */,
+				DBF344CF298CFD430019B286 /* UserInfoViewController.swift in Sources */,
 				DBF34504298D00EC0019B286 /* Router+Imp.swift in Sources */,
 				DBF345302990EA700019B286 /* ResourceErrorViewModel.swift in Sources */,
 				DBF34506298D010C0019B286 /* AppCoordinator.swift in Sources */,
 				DBA49D912992346B0064B30B /* UserInfoUpdateDataAdapter.swift in Sources */,
 				DB812DB329921D8500DF17BA /* ResourceView.swift in Sources */,
 				DB06EC73299104F8006A6C6D /* LoginViewController.swift in Sources */,
+				DBED05B0299490A300DF5DD1 /* LaunchView.swift in Sources */,
 				DBF345232990ABDD0019B286 /* URLSessionHTTPClient.swift in Sources */,
 				DB06EC7129910389006A6C6D /* ModuleFactory+Imp.swift in Sources */,
+				DBED05B32994923200DF5DD1 /* UserInfoView.swift in Sources */,
 				DBF344CB298CFD430019B286 /* AppDelegate.swift in Sources */,
 				DB06EC6F29910344006A6C6D /* ModuleFactory.swift in Sources */,
 				DBF34508298D01390019B286 /* CoordinatorFactory.swift in Sources */,

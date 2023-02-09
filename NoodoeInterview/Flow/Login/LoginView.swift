@@ -7,6 +7,8 @@
 
 import Foundation
 
-protocol LoginView {
+protocol LoginViewOutput {
     var onFinish: ((UserInfoItem?) -> Void)? { get set }
 }
+
+protocol LoginView: LoginViewOutput {}

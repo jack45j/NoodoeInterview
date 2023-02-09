@@ -8,6 +8,6 @@
 import Foundation
 
 protocol ModuleFactory {
-    func makeMainModule(store: LocalUserInfoStore) -> MainViewController
+    func makeMainModule(store: LocalUserInfoStore) -> UserInfoViewController
     func makeLoginModule(store: LocalUserInfoStore) -> LoginViewController
 }

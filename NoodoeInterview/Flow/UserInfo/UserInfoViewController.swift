@@ -7,15 +7,7 @@
 
 import UIKit
 
-protocol UserInfoView {
-    var onFinish: (() -> Void)? { get set }
-    var onLoginShouldStart: (() -> Void)? { get set }
-    var onLogOutShouldStart: (() -> Void)? { get set }
-    var onPatchTimeZoneShouldStart: (() -> Void)? { get set }
-    func userDataDidChange(user: UserInfoItem?)
-}
-
-class MainViewController: UIViewController, StoryboardBased, UserInfoView {
+class UserInfoViewController: UIViewController, StoryboardBased, UserInfoView {
     
     // MARK: - Outlet
     @IBOutlet weak var userInfoContainerView: UIView!
@@ -92,7 +84,7 @@ class MainViewController: UIViewController, StoryboardBased, UserInfoView {
     }
 }
 
-extension MainViewController: ResourceErrorView, ResourceLoadingView {
+extension UserInfoViewController: ResourceErrorView, ResourceLoadingView {
     func display(_ viewModel: ResourceErrorViewModel) {
         guard let errorMessage = viewModel.message else { return }
         DispatchQueue.main.async {

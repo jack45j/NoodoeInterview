@@ -8,8 +8,8 @@
 import Foundation
 
 final class ModuleFactoryImp: ModuleFactory {
-    func makeMainModule(store: LocalUserInfoStore) -> MainViewController {
-        let module = MainViewController.instantiate()
+    func makeMainModule(store: LocalUserInfoStore) -> UserInfoViewController {
+        let module = UserInfoViewController.instantiate()
         
         let adapter = UserInfoUpdateDataAdapter(controller: module, store: store)
         adapter.presenter = ResourceLoadingPresenter(

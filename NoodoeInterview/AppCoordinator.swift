@@ -8,9 +8,13 @@
 import UIKit
 
 private enum LaunchInstructor {
+    case launch
     case main
     
     static func configure() -> LaunchInstructor {
+        if UserDefaults.standard.bool(forKey: "Noodoe.LaunchScreenDidShow") == false {
+            return .launch
+        }
         return .main
     }
 }
@@ -35,8 +39,18 @@ final class ApplicationCoordinator: BaseCoordinator {
     
     override func start() {
         switch instructor {
+        case .launch: runLaunchFlow()
         case .main: runMainFlow()
         }
+    }
+    
+    private func runLaunchFlow() {
+        var launch: LaunchViewController? = LaunchViewController.instantiate()
+        launch?.onFinish = { [unowned self] in
+            launch = nil
+            runMainFlow()
+        }
+        router.setRootModule(launch, hideBar: true)
     }
     
     private func runMainFlow() {
