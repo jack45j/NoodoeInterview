@@ -8,7 +8,6 @@
 import Foundation
 
 protocol UserInfoUpdateDataUseCase {
-    var store: LocalUserInfoStore { get set }
     func signOut()
     func patchTimeZone(to timezone: Int)
 }
@@ -17,7 +16,7 @@ final class UserInfoUpdateDataAdapter: UserInfoUpdateDataUseCase, ResourceView {
     
     private var controller: UserInfoView?
     var presenter: ResourceLoadingPresenter<UserInfoItem?, UserInfoUpdateDataAdapter>?
-    var store: LocalUserInfoStore
+    private let store: LocalUserInfoStore
     
     init(controller: UserInfoView? = nil,
          presenter: ResourceLoadingPresenter<UserInfoItem?, UserInfoUpdateDataAdapter>? = nil,
