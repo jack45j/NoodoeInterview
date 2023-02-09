@@ -34,7 +34,7 @@
 		DBED05AE2994900400DF5DD1 /* LaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBED05AD2994900400DF5DD1 /* LaunchViewController.storyboard */; };
 		DBED05B0299490A300DF5DD1 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBED05AF299490A300DF5DD1 /* LaunchView.swift */; };
 		DBED05B32994923200DF5DD1 /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBED05B22994923200DF5DD1 /* UserInfoView.swift */; };
-		DBED05B529949A4A00DF5DD1 /* Noodoe.png in Resources */ = {isa = PBXBuildFile; fileRef = DBED05B429949A4A00DF5DD1 /* Noodoe.png */; };
+		DBED05B929949E6C00DF5DD1 /* Noodoe.png in Resources */ = {isa = PBXBuildFile; fileRef = DBED05B829949E6C00DF5DD1 /* Noodoe.png */; };
 		DBF344CB298CFD430019B286 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344CA298CFD430019B286 /* AppDelegate.swift */; };
 		DBF344CF298CFD430019B286 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF344CE298CFD430019B286 /* UserInfoViewController.swift */; };
 		DBF344D4298CFD450019B286 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBF344D3298CFD450019B286 /* Assets.xcassets */; };
@@ -105,7 +105,7 @@
 		DBED05AD2994900400DF5DD1 /* LaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchViewController.storyboard; sourceTree = "<group>"; };
 		DBED05AF299490A300DF5DD1 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		DBED05B22994923200DF5DD1 /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
-		DBED05B429949A4A00DF5DD1 /* Noodoe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Noodoe.png; sourceTree = "<group>"; };
+		DBED05B829949E6C00DF5DD1 /* Noodoe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Noodoe.png; sourceTree = "<group>"; };
 		DBF344C7298CFD430019B286 /* NoodoeInterview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoodoeInterview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBF344CA298CFD430019B286 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBF344CE298CFD430019B286 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 		DBF344BE298CFD430019B286 = {
 			isa = PBXGroup;
 			children = (
-				DBED05B429949A4A00DF5DD1 /* Noodoe.png */,
+				DBED05B829949E6C00DF5DD1 /* Noodoe.png */,
 				DBF344C9298CFD430019B286 /* NoodoeInterview */,
 				DBF344E0298CFD450019B286 /* NoodoeInterviewTests */,
 				DBF344EA298CFD450019B286 /* NoodoeInterviewUITests */,
@@ -464,7 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBF344D7298CFD450019B286 /* LaunchScreen.storyboard in Resources */,
-				DBED05B529949A4A00DF5DD1 /* Noodoe.png in Resources */,
+				DBED05B929949E6C00DF5DD1 /* Noodoe.png in Resources */,
 				DB06EC7529910523006A6C6D /* LoginViewController.storyboard in Resources */,
 				DBF34519298D15010019B286 /* UserInfoViewController.storyboard in Resources */,
 				DBED05AE2994900400DF5DD1 /* LaunchViewController.storyboard in Resources */,
