@@ -8,6 +8,7 @@
 import Foundation
 
 protocol UserInfoLoginUseCase {
+    var store: LocalUserInfoStore { get set }
     func login(userName: String, password: String)
 }
 
