@@ -20,15 +20,17 @@ final class ApplicationCoordinator: BaseCoordinator {
     private let coordinatorFactory: CoordinatorFactory
     private let factory: ModuleFactory
     private let router: Router
+    private let store: LocalUserInfoStore
     
     private var instructor: LaunchInstructor {
         return LaunchInstructor.configure()
     }
     
-    init(coordinatorFactory: CoordinatorFactory, factory: ModuleFactory, router: Router) {
+    init(coordinatorFactory: CoordinatorFactory, factory: ModuleFactory, router: Router, store: LocalUserInfoStore) {
         self.coordinatorFactory = coordinatorFactory
         self.factory = factory
         self.router = router
+        self.store = store
     }
     
     override func start() {
@@ -38,10 +40,10 @@ final class ApplicationCoordinator: BaseCoordinator {
     }
     
     private func runMainFlow() {
-        let user = try? LocalUserInfoStore().retrieve().get()
-        let mainViewModule = factory.makeMainModule()
+        let user = try? store.retrieve().get()
+        let mainViewModule = factory.makeMainModule(store: store)
         mainViewModule.onLoginShouldStart = { [unowned self] in
-            let loginModule = factory.makeLoginModule()
+            let loginModule = factory.makeLoginModule(store: store)
             loginModule.onFinish = { [unowned self, weak mainViewModule] user in
                 if let user = user {
                     mainViewModule?.userDataDidChange(user: user)

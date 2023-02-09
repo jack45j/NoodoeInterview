@@ -21,8 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let coordinator = ApplicationCoordinator(
             coordinatorFactory: CoordinatorFactoryImp(),
             factory: ModuleFactoryImp(),
-            router: RouterImp(rootController: self.rootController))
+            router: RouterImp(rootController: self.rootController),
+            store: store)
         return coordinator
+    }()
+    
+    private lazy var store: LocalUserInfoStore = {
+        let store = LocalUserInfoStore()
+        return store
     }()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

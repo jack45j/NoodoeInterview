@@ -62,7 +62,7 @@ class MainViewController: UIViewController, StoryboardBased, UserInfoView {
             if let updatedDate = user?.updatedDate {
                 self.lastUpdatedLabel.text = DateFormatter.localizedString(
                     from: updatedDate,
-                    dateStyle: .short,
+                    dateStyle: .medium,
                     timeStyle: .medium
                 )
             } else {

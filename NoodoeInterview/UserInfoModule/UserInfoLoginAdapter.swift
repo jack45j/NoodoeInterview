@@ -14,10 +14,14 @@ protocol UserInfoLoginUseCase {
 final class UserInfoLoginAdapter: UserInfoLoginUseCase, ResourceView {
     private var controller: LoginView?
     var presenter: ResourceLoadingPresenter<UserInfoItem, UserInfoLoginAdapter>?
+    private let store: LocalUserInfoStore
     
-    init(controller: LoginViewController? = nil, presenter: ResourceLoadingPresenter<UserInfoItem, UserInfoLoginAdapter>? = nil) {
+    init(controller: LoginViewController? = nil,
+         presenter: ResourceLoadingPresenter<UserInfoItem, UserInfoLoginAdapter>? = nil,
+         store: LocalUserInfoStore) {
         self.controller = controller
         self.presenter = presenter
+        self.store = store
     }
     
     func login(userName: String, password: String) {
@@ -45,7 +49,7 @@ final class UserInfoLoginAdapter: UserInfoLoginUseCase, ResourceView {
                 case let .success((data, _)):
                     switch UserInfoMapper.map(data: data) {
                     case let .success(user):
-                        LocalUserInfoStore().cacheData(data)
+                        self?.store.cacheData(data)
                         self?.presenter?.didFinishLoading(resource: user)
                     case .failure:
                         self?.presenter?.didFinishLoading(errorMessage: "Login Failed")

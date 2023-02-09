@@ -8,10 +8,10 @@
 import Foundation
 
 final class ModuleFactoryImp: ModuleFactory {
-    func makeMainModule() -> MainViewController {
+    func makeMainModule(store: LocalUserInfoStore) -> MainViewController {
         let module = MainViewController.instantiate()
         
-        let adapter = UserInfoUpdateDataAdapter(controller: module)
+        let adapter = UserInfoUpdateDataAdapter(controller: module, store: store)
         adapter.presenter = ResourceLoadingPresenter(
             resourceView: adapter,
             loadingView: module,
@@ -24,10 +24,10 @@ final class ModuleFactoryImp: ModuleFactory {
         return module
     }
     
-    func makeLoginModule() -> LoginViewController {
+    func makeLoginModule(store: LocalUserInfoStore) -> LoginViewController {
         let module = LoginViewController.instantiate()
         
-        let adapter = UserInfoLoginAdapter(controller: module)
+        let adapter = UserInfoLoginAdapter(controller: module, store: store)
         adapter.presenter = ResourceLoadingPresenter(
             resourceView: adapter,
             loadingView: module,
